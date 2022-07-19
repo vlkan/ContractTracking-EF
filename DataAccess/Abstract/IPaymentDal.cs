@@ -7,13 +7,7 @@ using System.Threading.Tasks;
 
 namespace DataAccess.Abstract
 {
-    public interface IPaymentDal
+    public interface IPaymentDal : IEntityRepository<IPaymentDal>
     {
-        List<Payment> GetAll();
-        List<Payment> GetAllByProjectName(string name);
-        List<Payment> GetAllByEmployeeName(string name);
-        void Add(Payment payment);
-        void Update(Payment payment);
-        void Delete(Payment payment);
     }
 }

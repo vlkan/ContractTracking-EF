@@ -7,15 +7,7 @@ using System.Threading.Tasks;
 
 namespace DataAccess.Abstract
 {
-    public interface IEmployeeDal
+    public interface IEmployeeDal : IEntityRepository<Employee>
     {
-        List<Employee> GetAll();
-        List<Employee> GetAllById(int id);
-        List<Employee> GetAllByNameSurname(string name);
-        List<Employee> GetAllByJobTitle(string title);
-
-        void Add(Employee employee);
-        void Update(Employee employee);
-        void Delete(Employee employee);
     }
 }

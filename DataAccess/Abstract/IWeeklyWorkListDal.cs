@@ -7,11 +7,7 @@ using System.Threading.Tasks;
 
 namespace DataAccess.Abstract
 {
-    public interface IWeeklyWorkListDal
+    public interface IWeeklyWorkListDal : IEntityRepository<WeeklyWorkList>
     {
-        List<WeeklyWorkList> GetAll();
-        void Add(WeeklyWorkList weeklyWorkList);
-        void Delete(WeeklyWorkList weeklyWorkList);
-        void Update(WeeklyWorkList weeklyWorkList);
     }
 }
