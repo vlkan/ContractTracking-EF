@@ -5,14 +5,13 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace Entities.Concrete
+namespace Entities.Concrete;
+
+public class Employee : IEntity
 {
-    public class Employee : IEntity
-    {
-        public int Id { get; set; }
-        public string NameSurname { get; set; }
-        public string Email { get; set; }
-        public string JobTitle { get; set; }
-        public DateTime? StartDate { get; set; }
-    }
+    public int Id { get; set; }
+    public string NameSurname { get; set; }
+    public string Email { get; set; }
+    public string JobTitle { get; set; }
+    public DateTime? StartDate { get; set; }
 }

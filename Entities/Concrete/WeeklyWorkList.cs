@@ -5,13 +5,12 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace Entities.Concrete
+namespace Entities.Concrete;
+
+public class WeeklyWorkList : IEntity
 {
-    public class WeeklyWorkList : IEntity
-    {
-        public string EmployeeNameSurname { get; set; }
-        public string ProjectName { get; set; }
-        public int NumberOfDaysWorked { get; set; }
-        public DateTime? WeeklyWorkingDate { get; set; }
-    }
+    public string EmployeeNameSurname { get; set; }
+    public string ProjectName { get; set; }
+    public int NumberOfDaysWorked { get; set; }
+    public DateTime? WeeklyWorkingDate { get; set; }
 }
