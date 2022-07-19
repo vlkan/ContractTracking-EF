@@ -40,6 +40,11 @@ namespace DataAccess.Concrete.InMemory
             throw new NotImplementedException();
         }
 
+        public List<Customer> GetAllByPhone(string number)
+        {
+            throw new NotImplementedException();
+        }
+
         public void Update(Customer customer)
         {
             throw new NotImplementedException();
