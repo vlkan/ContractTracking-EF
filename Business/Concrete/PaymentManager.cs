@@ -5,9 +5,8 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace Business.Concrete
+namespace Business.Concrete;
+
+public class PaymentManager : IPaymentService
 {
-    public class PaymentManager : IPaymentService
-    {
-    }
 }

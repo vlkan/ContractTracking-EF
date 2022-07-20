@@ -7,35 +7,34 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace Business.Concrete
+namespace Business.Concrete;
+
+public class CustomerManager : ICustomerService
 {
-    public class CustomerManager : ICustomerService
+    ICustomerDal _customerDal;
+
+    public CustomerManager(ICustomerDal customerDal)
     {
-        ICustomerDal _customerDal;
+        _customerDal = customerDal;
+    }
 
-        public CustomerManager(ICustomerDal customerDal)
-        {
-            _customerDal = customerDal;
-        }
+    public List<Customer> GetAll()
+    {
+        return _customerDal.GetAll();
+    }
 
-        public List<Customer> GetAll()
-        {
-            return _customerDal.GetAll();
-        }
+    public List<Customer> GetAllByEmail(string email)
+    {
+        return _customerDal.GetAll(c => c.Email == email);
+    }
 
-        public List<Customer> GetAllByEmail(string email)
-        {
-            return _customerDal.GetAll(c => c.Email == email);
-        }
+    public List<Customer> GetAllById(int id)
+    {
+        return _customerDal.GetAll(c => c.Id == id);
+    }
 
-        public List<Customer> GetAllById(int id)
-        {
-            return _customerDal.GetAll(c => c.Id == id);
-        }
-
-        public List<Customer> GetAllByName(string name)
-        {
-            return _customerDal.GetAll(c => c.Name == name);
-        }
+    public List<Customer> GetAllByName(string name)
+    {
+        return _customerDal.GetAll(c => c.Name == name);
     }
 }
