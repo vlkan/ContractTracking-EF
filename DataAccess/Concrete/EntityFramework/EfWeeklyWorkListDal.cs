@@ -1,4 +1,5 @@
-﻿using DataAccess.Abstract;
+﻿using Core.DataAccess.EntityFramework;
+using DataAccess.Abstract;
 using Entities.Concrete;
 using System;
 using System.Collections.Generic;
@@ -9,30 +10,6 @@ using System.Threading.Tasks;
 
 namespace DataAccess.Concrete.EntityFramework;
 
-public class EfWeeklyWorkListDal : IWeeklyWorkListDal
+public class EfWeeklyWorkListDal : EfEntityRepositoryBase<WeeklyWorkList, ProjectAndEmployeeTrackContext>, IWeeklyWorkListDal
 {
-    public void Add(WeeklyWorkList entity)
-    {
-        throw new NotImplementedException();
-    }
-
-    public void Delete(WeeklyWorkList entity)
-    {
-        throw new NotImplementedException();
-    }
-
-    public WeeklyWorkList Get(Expression<Func<WeeklyWorkList, bool>> filter)
-    {
-        throw new NotImplementedException();
-    }
-
-    public List<WeeklyWorkList> GetAll(Expression<Func<WeeklyWorkList, bool>> filter = null)
-    {
-        throw new NotImplementedException();
-    }
-
-    public void Update(WeeklyWorkList entity)
-    {
-        throw new NotImplementedException();
-    }
 }
