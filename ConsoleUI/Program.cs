@@ -1,2 +1,9 @@
-﻿// See https://aka.ms/new-console-template for more information
-Console.WriteLine("Hello, World!");
+﻿using Business.Concrete;
+using DataAccess.Concrete.EntityFramework;
+
+CustomerManager customerManager = new CustomerManager(new EfCustomerDal());
+
+foreach (var customer in customerManager.GetAll()) 
+{
+    Console.WriteLine(customer.Name);
+}

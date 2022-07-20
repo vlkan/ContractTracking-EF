@@ -1,4 +1,5 @@
 ﻿using DataAccess.Abstract;
+using Entities.Concrete;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -10,27 +11,27 @@ namespace DataAccess.Concrete.EntityFramework
 {
     public class EfPaymentDal : IPaymentDal
     {
-        public void Add(IPaymentDal entity)
+        public void Add(Payment entity)
         {
             throw new NotImplementedException();
         }
 
-        public void Delete(IPaymentDal entity)
+        public void Delete(Payment entity)
         {
             throw new NotImplementedException();
         }
 
-        public IPaymentDal Get(Expression<Func<IPaymentDal, bool>> filter)
+        public Payment Get(Expression<Func<Payment, bool>> filter)
         {
             throw new NotImplementedException();
         }
 
-        public List<IPaymentDal> GetAll(Expression<Func<IPaymentDal, bool>> filter = null)
+        public List<Payment> GetAll(Expression<Func<Payment, bool>> filter = null)
         {
             throw new NotImplementedException();
         }
 
-        public void Update(IPaymentDal entity)
+        public void Update(Payment entity)
         {
             throw new NotImplementedException();
         }
