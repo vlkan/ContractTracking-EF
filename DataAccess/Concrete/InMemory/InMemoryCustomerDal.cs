@@ -1,5 +1,6 @@
 ﻿using DataAccess.Abstract;
 using Entities.Concrete;
+using Entities.DTOs;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -52,6 +53,11 @@ namespace DataAccess.Concrete.InMemory
         }
 
         public List<Customer> GetAllByPhone(string number)
+        {
+            throw new NotImplementedException();
+        }
+
+        public List<CustomerDetailDto> GetCustomerDetails()
         {
             throw new NotImplementedException();
         }

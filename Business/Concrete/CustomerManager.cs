@@ -1,6 +1,7 @@
 ﻿using Business.Abstract;
 using DataAccess.Abstract;
 using Entities.Concrete;
+using Entities.DTOs;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -36,5 +37,10 @@ public class CustomerManager : ICustomerService
     public List<Customer> GetAllByName(string name)
     {
         return _customerDal.GetAll(c => c.Name == name);
+    }
+
+    public List<CustomerDetailDto> GetCustomerDetails()
+    {
+        return _customerDal.GetCustomerDetails();
     }
 }

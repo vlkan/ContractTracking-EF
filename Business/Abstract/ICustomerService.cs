@@ -1,4 +1,5 @@
 ﻿using Entities.Concrete;
+using Entities.DTOs;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -13,4 +14,5 @@ public interface ICustomerService
     List<Customer> GetAllById(int id);
     List<Customer> GetAllByName(string name);
     List<Customer> GetAllByEmail(string email);
+    List<CustomerDetailDto> GetCustomerDetails();
 }

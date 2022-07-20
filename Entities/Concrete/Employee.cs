@@ -9,9 +9,9 @@ namespace Entities.Concrete;
 
 public class Employee : IEntity
 {
-    public int Id { get; set; }
+    public int EmployeeId { get; set; }
     public string NameSurname { get; set; }
-    public string Email { get; set; }
+    public string EmployeeEmail { get; set; }
     public string JobTitle { get; set; }
     public DateTime? StartDate { get; set; }
 }

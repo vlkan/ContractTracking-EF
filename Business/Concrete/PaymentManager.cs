@@ -1,4 +1,6 @@
 ﻿using Business.Abstract;
+using DataAccess.Abstract;
+using Entities.Concrete;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -9,4 +11,15 @@ namespace Business.Concrete;
 
 public class PaymentManager : IPaymentService
 {
+    IPaymentDal paymentDal;
+
+    public PaymentManager(IPaymentDal paymentDal)
+    {
+        this.paymentDal = paymentDal;
+    }
+
+    public List<Payment> GetAll()
+    {
+        return paymentDal.GetAll();
+    }
 }

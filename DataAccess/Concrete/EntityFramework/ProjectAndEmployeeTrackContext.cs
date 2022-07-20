@@ -16,9 +16,9 @@ public class ProjectAndEmployeeTrackContext : DbContext
         optionsBuilder.UseSqlServer(@"Server=(localdb)\MSSQLLocalDB;Database=ProjectAndEmployeeTrack;Trusted_Connection=true");
     }
 
-    public DbSet<Customer> Customer { get; set; }
-    public DbSet<Employee> Employee { get; set; }
-    public DbSet<Payment> Payment { get; set; }
-    public DbSet<Project> Project { get; set; }
-    public DbSet<WeeklyWorkList> WeeklyWorkList { get; set; }
+    public DbSet<Customer> Customers { get; set; }
+    public DbSet<Employee> Employees { get; set; }
+    public DbSet<Payment> Payments { get; set; }
+    public DbSet<Project> Projects { get; set; }
+    public DbSet<WeeklyWorkList> WeeklyWorkLists { get; set; }
 }

@@ -5,18 +5,18 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace Entities.Concrete;
+namespace Entities.DTOs;
 
-public class Project : IEntity
+public class CustomerDetailDto : IDto
 {
-    public int ProjectId { get; set; }
+    public string Name { get; set; }
+    public string Email { get; set; }
+    public string Phone { get; set; }
+    public DateTime CreateAt { get; set; }
     public string ProjectName { get; set; }
     public string ProjectType { get; set; }
-    public string ProjectOwner { get; set; }
     public string ProjectDescription { get; set; }
     public decimal? ContractBudget { get; set; }
     public int? ContractTerm { get; set; }
     public DateTime? ContractStartDate { get; set; }
-    public int? WorkerDay { get; set; }
-    public int? WorkerHour { get; set; }
 }
