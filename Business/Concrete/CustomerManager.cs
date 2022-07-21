@@ -29,26 +29,26 @@ public class CustomerManager : ICustomerService
 
     public IDataResult<List<Customer>> GetAll()
     {
-        return new DataResult<List<Customer>>(_customerDal.GetAll(), true, Messages.CustomerListed);
+        return new SuccessDataResult<List<Customer>>(_customerDal.GetAll(), Messages.CustomerListed);
     }
 
     public IDataResult<Customer> GetAllByEmail(string email)
     {
-        return _customerDal.Get(c => c.Email == email);
+        return new SuccessDataResult<Customer>(_customerDal.Get(c => c.Email == email), Messages.CustomerListed);
     }
 
     public IDataResult<Customer> GetAllByName(string name)
     {
-        return _customerDal.Get(c => c.Name == name);
+        return new SuccessDataResult<Customer>(_customerDal.Get(c => c.Name == name), Messages.CustomerListed);
     }
 
     public IDataResult<Customer> GetById(int id)
     {
-        return _customerDal.Get(c => c.Id == id);
+        return new SuccessDataResult<Customer>(_customerDal.Get(c => c.Id == id), Messages.CustomerListed);
     }
 
     public IDataResult<List<CustomerDetailDto>> GetCustomerDetails()
     {
-        return _customerDal.GetCustomerDetails();
+        return new SuccessDataResult<List<CustomerDetailDto>>(_customerDal.GetCustomerDetails(), Messages.CustomerListed);
     }
 }
