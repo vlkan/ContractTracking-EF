@@ -9,7 +9,7 @@ static void CustomerTest()
 {
     CustomerManager customerManager = new CustomerManager(new EfCustomerDal());
 
-    foreach (var customer in customerManager.GetAllById(1))
+    foreach (var customer in customerManager.GetAll())
     {
         Console.WriteLine(customer.Name);
     }

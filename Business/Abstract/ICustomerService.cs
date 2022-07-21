@@ -11,8 +11,9 @@ namespace Business.Abstract;
 public interface ICustomerService
 {
     List<Customer> GetAll();
-    List<Customer> GetAllById(int id);
-    List<Customer> GetAllByName(string name);
-    List<Customer> GetAllByEmail(string email);
+    Customer GetAllByName(string name);
+    Customer GetAllByEmail(string email);
     List<CustomerDetailDto> GetCustomerDetails();
+    Customer GetById(int id);
+    void Add(Customer customer);
 }

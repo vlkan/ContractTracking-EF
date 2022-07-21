@@ -19,24 +19,29 @@ public class CustomerManager : ICustomerService
         _customerDal = customerDal;
     }
 
+    public void Add(Customer customer)
+    {
+        _customerDal.Add(customer);
+    }
+
     public List<Customer> GetAll()
     {
         return _customerDal.GetAll();
     }
 
-    public List<Customer> GetAllByEmail(string email)
+    public Customer GetAllByEmail(string email)
     {
-        return _customerDal.GetAll(c => c.Email == email);
+        return _customerDal.Get(c => c.Email == email);
     }
 
-    public List<Customer> GetAllById(int id)
+    public Customer GetAllByName(string name)
     {
-        return _customerDal.GetAll(c => c.Id == id);
+        return _customerDal.Get(c => c.Name == name);
     }
 
-    public List<Customer> GetAllByName(string name)
+    public Customer GetById(int id)
     {
-        return _customerDal.GetAll(c => c.Name == name);
+        return _customerDal.Get(c => c.Id == id);
     }
 
     public List<CustomerDetailDto> GetCustomerDetails()
