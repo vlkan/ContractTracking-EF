@@ -1,4 +1,5 @@
-﻿using Entities.Concrete;
+﻿using Business.Abstract;
+using Entities.Concrete;
 using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
 
@@ -8,9 +9,17 @@ namespace WebAPI.Controllers;
 [ApiController]
 public class CustomersController : ControllerBase
 {
+    ICustomerService _customerService;
+    //IoC Container -- Inversion of Controller
+
+    public CustomersController(ICustomerService customerService)
+    {
+        _customerService = customerService;
+    }
+
     [HttpGet]
     public List<Customer> Get() 
     {
-        return new List<Customer>();
+        return _customerService.GetAll().Data;
     }
 }
