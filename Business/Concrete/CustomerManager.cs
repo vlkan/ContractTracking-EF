@@ -1,4 +1,5 @@
 ﻿using Business.Abstract;
+using Business.Constants;
 using Core.Utilities.Results;
 using DataAccess.Abstract;
 using Entities.Concrete;
@@ -23,30 +24,30 @@ public class CustomerManager : ICustomerService
     public IResult Add(Customer customer)
     {
         _customerDal.Add(customer);
-        return new Result(false, "Customer Added");
+        return new SuccessResult(Messages.CustomerAdded);
     }
 
-    public List<Customer> GetAll()
+    public IDataResult<List<Customer>> GetAll()
     {
-        return _customerDal.GetAll();
+        return new DataResult<List<Customer>>(_customerDal.GetAll(), true, Messages.CustomerListed);
     }
 
-    public Customer GetAllByEmail(string email)
+    public IDataResult<Customer> GetAllByEmail(string email)
     {
         return _customerDal.Get(c => c.Email == email);
     }
 
-    public Customer GetAllByName(string name)
+    public IDataResult<Customer> GetAllByName(string name)
     {
         return _customerDal.Get(c => c.Name == name);
     }
 
-    public Customer GetById(int id)
+    public IDataResult<Customer> GetById(int id)
     {
         return _customerDal.Get(c => c.Id == id);
     }
 
-    public List<CustomerDetailDto> GetCustomerDetails()
+    public IDataResult<List<CustomerDetailDto>> GetCustomerDetails()
     {
         return _customerDal.GetCustomerDetails();
     }
