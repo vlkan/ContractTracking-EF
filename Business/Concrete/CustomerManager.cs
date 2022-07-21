@@ -1,4 +1,5 @@
 ﻿using Business.Abstract;
+using Core.Utilities.Results;
 using DataAccess.Abstract;
 using Entities.Concrete;
 using Entities.DTOs;
@@ -19,9 +20,10 @@ public class CustomerManager : ICustomerService
         _customerDal = customerDal;
     }
 
-    public void Add(Customer customer)
+    public IResult Add(Customer customer)
     {
         _customerDal.Add(customer);
+        return new Result(false, "Customer Added");
     }
 
     public List<Customer> GetAll()

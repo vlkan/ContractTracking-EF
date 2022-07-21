@@ -1,4 +1,5 @@
-﻿using Entities.Concrete;
+﻿using Core.Utilities.Results;
+using Entities.Concrete;
 using Entities.DTOs;
 using System;
 using System.Collections.Generic;
@@ -15,5 +16,5 @@ public interface ICustomerService
     Customer GetAllByEmail(string email);
     List<CustomerDetailDto> GetCustomerDetails();
     Customer GetById(int id);
-    void Add(Customer customer);
+    IResult Add(Customer customer);
 }
