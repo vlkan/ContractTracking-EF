@@ -51,4 +51,10 @@ public class CustomerManager : ICustomerService
     {
         return new SuccessDataResult<List<CustomerDetailDto>>(_customerDal.GetCustomerDetails(), Messages.CustomerListed);
     }
+
+    public IResult Update(Customer customer)
+    {
+        _customerDal.Update(customer);
+        return new SuccessResult(Messages.CustomerUpdated);
+    }
 }

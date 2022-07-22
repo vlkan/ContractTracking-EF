@@ -17,4 +17,5 @@ public interface ICustomerService
     IDataResult<List<CustomerDetailDto>> GetCustomerDetails();
     IDataResult<Customer> GetById(int id);
     IResult Add(Customer customer);
+    IResult Update(Customer customer);
 }
