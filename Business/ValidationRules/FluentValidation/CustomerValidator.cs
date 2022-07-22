@@ -10,4 +10,9 @@ namespace Business.ValidationRules.FluentValidation;
 
 public class CustomerValidator : AbstractValidator<Customer>
 {
+    public CustomerValidator()
+    {
+        RuleFor(c => c.Email).NotEmpty();
+        RuleFor(c => c.Email).MinimumLength(3);
+    }
 }
