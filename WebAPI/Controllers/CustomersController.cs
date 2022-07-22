@@ -17,9 +17,36 @@ public class CustomersController : ControllerBase
         _customerService = customerService;
     }
 
-    [HttpGet]
-    public List<Customer> Get() 
+    [HttpGet("getall")]
+    public IActionResult GetAll() 
     {
-        return _customerService.GetAll().Data;
+        var result = _customerService.GetAll();
+        if (result.Success) 
+        {
+            return Ok(result);
+        }
+        return BadRequest(result);
+    }
+
+    [HttpGet("getbyid")]
+    public IActionResult GetById(int id)
+    {
+        var result = _customerService.GetById(id);
+        if (result.Success)
+        {
+            return Ok(result);
+        }
+        return BadRequest(result);
+    }
+
+    [HttpPost("add")]
+    public IActionResult Add(Customer customer) 
+    {
+        var result = _customerService.Add(customer);
+        if (result.Success)
+        {
+            return Ok(result);
+        }
+        return BadRequest(result);
     }
 }
