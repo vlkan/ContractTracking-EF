@@ -5,15 +5,15 @@ using DataAccess.Concrete.EntityFramework;
 
 PaymentTest();
 
-static void CustomerTest()
-{
-    CustomerManager customerManager = new CustomerManager(new EfCustomerDal());
+//static void CustomerTest()
+//{
+//    CustomerManager customerManager = new CustomerManager(new EfCustomerDal());
 
-    foreach (var customer in customerManager.GetAll().Data)
-    {
-        Console.WriteLine(customer.Name);
-    }
-}
+//    foreach (var customer in customerManager.GetAll().Data)
+//    {
+//        Console.WriteLine(customer.Name);
+//    }
+//}
 
 static void PaymentTest()
 {
