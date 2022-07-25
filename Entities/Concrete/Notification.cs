@@ -7,14 +7,11 @@ using System.Threading.Tasks;
 
 namespace Entities.Concrete;
 
-public class Employee : IEntity
+public class Notification : IEntity
 {
     public int Id { get; set; }
-    public string Name { get; set; }
-    public string Surname { get; set; }
-    public string Email { get; set; }
-    public string JobTitle { get; set; }
-    public DateTime? StartDate { get; set; }
+    public int Type { get; set; }
+    public string Message { get; set; }
     public int IsDeleted { get; set; }
     public DateTime CreatedAt { get; set; }
     public DateTime? ModifiedAt { get; set; }

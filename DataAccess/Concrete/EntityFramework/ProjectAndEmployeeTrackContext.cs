@@ -20,5 +20,5 @@ public class ProjectAndEmployeeTrackContext : DbContext
     public DbSet<Employee> Employees { get; set; }
     public DbSet<Payment> Payments { get; set; }
     public DbSet<Project> Projects { get; set; }
-    public DbSet<WeeklyWorkList> WeeklyWorkLists { get; set; }
+    public DbSet<WorkList> WeeklyWorkLists { get; set; }
 }
