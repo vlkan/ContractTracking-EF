@@ -20,4 +20,7 @@ public class CustomerDetailDto : IDto
     public decimal? ContractBudget { get; set; }
     public int? ContractTerm { get; set; }
     public DateTime? ContractStartDate { get; set; }
+    public int IsDeleted { get; set; }
+    public DateTime CreatedAt { get; set; }
+    public DateTime? ModifiedAt { get; set; }
 }
