@@ -62,4 +62,14 @@ public class CustomerManager : ICustomerService
         _customerDal.Update(customer);
         return new SuccessResult(Messages.CustomerUpdated);
     }
+
+    private IResult CheckIfCustomerExists(string customerName)
+    {
+        var result = _customerDal.GetAll(c => c.Name == customerName).Any();
+        if (!result)
+        {
+            return new SuccessResult();
+        }
+        return new ErrorResult(Messages.CustomerAlreadyExist);
+    }
 }
