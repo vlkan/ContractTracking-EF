@@ -6,6 +6,6 @@ using System.Threading.Tasks;
 
 namespace Business.Abstract;
 
-public interface IWeeklyWorkListService
+public interface IWorkListService
 {
 }

@@ -12,19 +12,19 @@ using System.Threading.Tasks;
 
 namespace DataAccess.Concrete.EntityFramework;
 
-public class EfCustomerDal : EfEntityRepositoryBase<Customer, ProjectAndEmployeeTrackContext>, ICustomerDal
+public class EfCustomerDal : EfEntityRepositoryBase<Customer, ContractTrackingContext>, ICustomerDal
 {
     public List<CustomerDetailDto> GetCustomerDetails()
     {
-        using (ProjectAndEmployeeTrackContext context = new ProjectAndEmployeeTrackContext())
+        using (ContractTrackingContext context = new ContractTrackingContext())
         {
             var result = from c in context.Customers
                          join p in context.Projects
-                         on c.Name equals p.ProjectOwner
+                         on c.Id equals p.OwnerId
                          select new CustomerDetailDto 
                          { 
-                             Name = c.Name, Email = c.Email, Phone = c.Phone, CreateAt = c.CreatedAt,
-                             ProjectName = p.ProjectName, ProjectType = p.ProjectType, ProjectDescription = p.ProjectDescription,
+                             Id = c.Id, Email = c.Email, Phone = c.Phone, CreateAt = c.CreatedAt,
+                             ProjectName = p.Name, ProjectType = p.Type, ProjectDescription = p.Description,
                              ContractBudget = p.ContractBudget, ContractTerm = p.ContractTerm, ContractStartDate = p.ContractStartDate
                          };
             return result.ToList();

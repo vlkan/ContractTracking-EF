@@ -7,6 +7,6 @@ using System.Threading.Tasks;
 
 namespace Business.Concrete;
 
-public class WeeklyWorkListManager : IWeeklyWorkListService
+public class WorkListManager : IWorkListService
 {
 }

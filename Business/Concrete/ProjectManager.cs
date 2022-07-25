@@ -25,6 +25,6 @@ public class ProjectManager : IProjectService
 
     public IDataResult<Project> GetById(int id)
     {
-        return new SuccessDataResult<Project>(_projectDal.Get(p => p.ProjectId == id));
+        return new SuccessDataResult<Project>(_projectDal.Get(p => p.Id == id));
     }
 }

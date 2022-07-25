@@ -8,6 +8,6 @@ using System.Threading.Tasks;
 
 namespace DataAccess.Abstract;
 
-public interface IWeeklyWorkListDal : IEntityRepository<WorkList>
+public interface INotificationsDal : IEntityRepository<Notification>
 {
 }

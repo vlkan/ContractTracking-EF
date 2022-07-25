@@ -10,6 +10,6 @@ using System.Threading.Tasks;
 
 namespace DataAccess.Concrete.EntityFramework;
 
-public class EfEmployeeDal : EfEntityRepositoryBase<Employee, ProjectAndEmployeeTrackContext>, IEmployeeDal
+public class EfEmployeeDal : EfEntityRepositoryBase<Employee, ContractTrackingContext>, IEmployeeDal
 {
 }
