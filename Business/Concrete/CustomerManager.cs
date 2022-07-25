@@ -3,6 +3,7 @@ using Business.Constants;
 using Business.ValidationRules.FluentValidation;
 using Core.Aspects.Autofac.Validation;
 using Core.CrossCuttingConcerns.Validation;
+using Core.Utilities.Business;
 using Core.Utilities.Results;
 using DataAccess.Abstract;
 using Entities.Concrete;
@@ -19,15 +20,22 @@ namespace Business.Concrete;
 public class CustomerManager : ICustomerService
 {
     ICustomerDal _customerDal;
+    IProjectService _projectService;
 
-    public CustomerManager(ICustomerDal customerDal)
+    public CustomerManager(ICustomerDal customerDal, IProjectService projectService)
     {
         _customerDal = customerDal;
+        _projectService = projectService;
     }
 
     [ValidationAspect(typeof(CustomerValidator))]
     public IResult Add(Customer customer)
     {
+        IResult result = BusinessRules.Run(CheckIfCustomerExists(customer.Name));
+        if (result != null)
+        {
+            return result;
+        }
         _customerDal.Add(customer);
         return new SuccessResult(Messages.CustomerAdded);
     }
@@ -59,6 +67,11 @@ public class CustomerManager : ICustomerService
 
     public IResult Update(Customer customer)
     {
+        IResult result = BusinessRules.Run(CheckIfCustomerExists(customer.Name));
+        if (result != null) 
+        {
+            return result;
+        }
         _customerDal.Update(customer);
         return new SuccessResult(Messages.CustomerUpdated);
     }
@@ -71,5 +84,11 @@ public class CustomerManager : ICustomerService
             return new SuccessResult();
         }
         return new ErrorResult(Messages.CustomerAlreadyExist);
+    }
+
+    private int CheckIfProjectNumber() 
+    {
+        var result = _projectService.GetAll().Data.Count;
+        return result;
     }
 }
