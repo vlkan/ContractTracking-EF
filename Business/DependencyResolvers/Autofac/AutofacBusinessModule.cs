@@ -21,6 +21,9 @@ public class AutofacBusinessModule : Module
         builder.RegisterType<CustomerManager>().As<ICustomerService>().SingleInstance();
         builder.RegisterType<EfCustomerDal>().As<ICustomerDal>().SingleInstance();
 
+        builder.RegisterType<ProjectManager>().As<IProjectService>().SingleInstance();
+        builder.RegisterType<EfProjectDal>().As<IProjectDal>().SingleInstance();
+
         var assembly = System.Reflection.Assembly.GetExecutingAssembly();
 
         builder.RegisterAssemblyTypes(assembly).AsImplementedInterfaces()

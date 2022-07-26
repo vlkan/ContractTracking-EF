@@ -3,7 +3,7 @@ using DataAccess.Concrete.EntityFramework;
 
 //CustomerTest();
 
-PaymentTest();
+//PaymentTest();
 
 //static void CustomerTest()
 //{
