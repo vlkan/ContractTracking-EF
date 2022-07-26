@@ -13,15 +13,12 @@ public class DbContextInitializer
     public static IConfigurationRoot Configuration;
     public static DbContextOptionsBuilder<ContractTrackingContext> optionsBuilder;
 
-
-    public static void Build()
+    public static void Build() 
     {
         var builder = new ConfigurationBuilder()
-            .SetBasePath(Directory.GetCurrentDirectory())
-            .AddJsonFile("appsettings.json", optional: true, reloadOnChange: true);
+                .SetBasePath(Directory.GetCurrentDirectory())
+                .AddJsonFile("appsettings.json", optional: true, reloadOnChange: true);
 
         Configuration = builder.Build();
-        //optionsBuilder = new DbContextOptionsBuilder<ContractTrackingContext>();
-        //optionsBuilder.UseSqlServer(Configuration.GetConnectionString("SqlCon"));
     }
 }

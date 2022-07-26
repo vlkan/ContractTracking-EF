@@ -21,7 +21,7 @@ public class ContractTrackingContext : DbContext
 
     protected override void OnConfiguring(DbContextOptionsBuilder optionsBuilder)
     {
-        optionsBuilder.UseSqlServer(@"Server=(localdb)\MSSQLLocalDB;Database=ContractTracking;Trusted_Connection=true");
-        //optionsBuilder.UseSqlServer(DbContextInitializer.Configuration.GetConnectionString("SqlCon"));
+        //optionsBuilder.UseSqlServer(@"Server=(localdb)\MSSQLLocalDB;Database=ContractTracking;Trusted_Connection=true");
+        optionsBuilder.UseSqlServer(DbContextInitializer.Configuration.GetConnectionString("SqlCon"));
     }
 }
