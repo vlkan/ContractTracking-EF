@@ -1,16 +1,17 @@
-﻿using Core.Entities.Concrete;
-using Core.Utilities.Security.Encryption;
-using Microsoft.Extensions.Configuration;
-using Microsoft.IdentityModel.Tokens;
-using System;
+﻿using System;
 using System.Collections.Generic;
 using System.IdentityModel.Tokens.Jwt;
 using System.Linq;
 using System.Security.Claims;
 using System.Text;
-using System.Threading.Tasks;
+using Core.Entities.Concrete;
+using Core.Extensions;
+using Core.Utilities.Security.Encryption;
+using Core.Utilities.Security.JWT;
+using Microsoft.Extensions.Configuration;
+using Microsoft.IdentityModel.Tokens;
 
-namespace Core.Utilities.Security.JWT;
+namespace Core.Utilities.Security.Jwt;
 
 public class JwtHelper : ITokenHelper
 {
@@ -27,7 +28,7 @@ public class JwtHelper : ITokenHelper
     {
         _accessTokenExpiration = DateTime.Now.AddMinutes(_tokenOptions.AccessTokenExpiration);
         var securityKey = SecurityKeyHelper.CreateSecurityKey(_tokenOptions.SecurityKey);
-        var signingCredentials = SigningCredentialsHelper.CreateSigningCredentials(securityKey);
+        var signingCredentials = SigningCrendentialsHelper.CreateSigningCredentials(securityKey);
         var jwt = CreateJwtSecurityToken(_tokenOptions, user, signingCredentials, operationClaims);
         var jwtSecurityTokenHandler = new JwtSecurityTokenHandler();
         var token = jwtSecurityTokenHandler.WriteToken(jwt);
