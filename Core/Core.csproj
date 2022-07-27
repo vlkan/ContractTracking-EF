@@ -13,11 +13,7 @@
     <PackageReference Include="FluentValidation" Version="11.1.0" />
     <PackageReference Include="Microsoft.EntityFrameworkCore.Abstractions" Version="6.0.7" />
     <PackageReference Include="Microsoft.EntityFrameworkCore.SqlServer" Version="6.0.7" />
-  </ItemGroup>
-
-  <ItemGroup>
-    <Folder Include="Utilities\Security\Encryption\" />
-    <Folder Include="Utilities\Security\JWT\" />
+    <PackageReference Include="Microsoft.IdentityModel.Tokens" Version="6.22.0" />
   </ItemGroup>
 
 </Project>
