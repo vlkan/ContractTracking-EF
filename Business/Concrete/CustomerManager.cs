@@ -29,7 +29,7 @@ public class CustomerManager : ICustomerService
         _projectService = projectService;
     }
 
-    [SecuredOperation("customer.add, admin")] //not necessary this project
+    //[SecuredOperation("customer.add, admin")] //not necessary this project
     [ValidationAspect(typeof(CustomerValidator))]
     public IResult Add(Customer customer)
     {

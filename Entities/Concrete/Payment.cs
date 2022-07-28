@@ -21,7 +21,7 @@ public class Payment : IEntity
     [Column(TypeName = "money")]
     public Decimal RemainingBudget { get; set; }
     public string PaymentDescription { get; set; }
-    public int IsDeleted { get; set; }
+    public EnumIsDeleted IsDeleted { get; set; }
     public DateTime CreatedAt { get; set; }
     public DateTime ModifiedAt { get; set; }
 

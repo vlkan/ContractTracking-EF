@@ -11,5 +11,11 @@ public interface IEntity
     public int Id { get; set; }
     public DateTime CreatedAt { get; set; }
     public DateTime ModifiedAt { get; set; }
-    public int IsDeleted { get; set; }
+    public EnumIsDeleted IsDeleted { get; set; }
+}
+
+public enum EnumIsDeleted : int
+{
+    Yes = 0,
+    No = 1,
 }

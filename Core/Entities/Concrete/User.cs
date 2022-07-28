@@ -10,7 +10,7 @@ public class User : IEntity
 {
     public DateTime CreatedAt { get; set; }
     public DateTime ModifiedAt { get; set; }
-    public int IsDeleted { get; set; }
+    public EnumIsDeleted IsDeleted { get; set; }
 
 
     public int Id { get; set; }

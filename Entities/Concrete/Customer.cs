@@ -15,7 +15,13 @@ public class Customer : IEntity
     public string? Description { get; set; }
     public int Type { get; set; }
     public string? Phone { get; set; }
-    public int IsDeleted { get; set; }
+    public EnumIsDeleted IsDeleted { get; set; }
     public DateTime CreatedAt { get; set; }
     public DateTime ModifiedAt { get; set; }
+}
+
+public enum EType : int
+{
+    Individual = 1,
+    Corporate = 2,
 }
