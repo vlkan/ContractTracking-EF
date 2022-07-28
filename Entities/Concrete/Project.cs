@@ -12,7 +12,8 @@ public class Project : IEntity
 {
     public int Id { get; set; }
     public string Name { get; set; }
-    public string Type { get; set; }
+    public ProjectType Type { get; set; }
+    public string SubType { get; set; }
     public int EmployeeOwnerId { get; set; }
     public int CustomerOwnerId { get; set; }
     public string Description { get; set; }
@@ -27,4 +28,18 @@ public class Project : IEntity
     public DateTime CreatedAt { get; set; }
     public DateTime ModifiedAt { get; set; }
 
+}
+
+public enum ProjectType 
+{
+    System = 1,
+    Software = 2,
+    SystemAndSoftware = 3,
+}
+
+public enum CurrencyTypeE
+{
+    TurkishLira = 1,
+    Dollar = 2,
+    Pound = 3,
 }

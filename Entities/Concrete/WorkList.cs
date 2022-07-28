@@ -8,13 +8,12 @@ using System.Threading.Tasks;
 
 namespace Entities.Concrete;
 
-[Keyless]
 public class WorkList : IEntity
 {
     public int Id { get; set; }
     public string Name { get; set; }
     public string Surname { get; set; }
-    public string ProjectName { get; set; }
+    public int ProjectId { get; set; }
     public int WorkingHours { get; set; }
     public DateTime? WorkingDate { get; set; }
     public EnumIsDeleted IsDeleted { get; set; }

@@ -13,14 +13,14 @@ public class Customer : IEntity
     public string Name { get; set; }
     public string Email { get; set; }
     public string? Description { get; set; }
-    public int Type { get; set; }
+    public CustomerType Type { get; set; }
     public string? Phone { get; set; }
     public EnumIsDeleted IsDeleted { get; set; }
     public DateTime CreatedAt { get; set; }
     public DateTime ModifiedAt { get; set; }
 }
 
-public enum EType : int
+public enum CustomerType : int
 {
     Individual = 1,
     Corporate = 2,

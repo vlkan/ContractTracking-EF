@@ -9,7 +9,6 @@ using System.Threading.Tasks;
 
 namespace Entities.Concrete;
 
-[Keyless]
 public class Payment : IEntity
 {
     public int Id { get; set; }
@@ -24,5 +23,4 @@ public class Payment : IEntity
     public EnumIsDeleted IsDeleted { get; set; }
     public DateTime CreatedAt { get; set; }
     public DateTime ModifiedAt { get; set; }
-
 }
