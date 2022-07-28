@@ -1,4 +1,5 @@
-﻿using System;
+﻿using Core.Entities.Concrete;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Runtime.Serialization;
@@ -15,4 +16,10 @@ public static class Messages
     public static string CustomerListed = "Customers Listed";
     public static string CustomerAlreadyExist = "Customer is Already Exist";
     public static string AuthorizationDenied = "Auth Issue";
+    internal static string UserRegistered;
+    internal static User UserNotFound;
+    internal static User PasswordError;
+    internal static string SuccessfulLogin;
+    internal static string UserAlreadyExists;
+    internal static string AccessTokenCreated;
 }
