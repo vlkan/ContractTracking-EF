@@ -9,7 +9,7 @@ namespace Core.Entities.Concrete;
 public class User : IEntity
 {
     public DateTime CreatedAt { get; set; }
-    public DateTime? ModifiedAt { get; set; }
+    public DateTime ModifiedAt { get; set; }
     public int IsDeleted { get; set; }
 
 

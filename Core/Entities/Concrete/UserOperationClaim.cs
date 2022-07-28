@@ -12,6 +12,6 @@ public class UserOperationClaim : IEntity
     public int UserId { get; set; }
     public int OperationClaimId { get; set; }
     public DateTime CreatedAt { get; set; }
-    public DateTime? ModifiedAt { get; set; }
+    public DateTime ModifiedAt { get; set; }
     public int IsDeleted { get; set; }
 }

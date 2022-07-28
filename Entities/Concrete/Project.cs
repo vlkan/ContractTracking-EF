@@ -24,6 +24,6 @@ public class Project : IEntity
     public int? WorkerHour { get; set; }
     public int IsDeleted { get; set; }
     public DateTime CreatedAt { get; set; }
-    public DateTime? ModifiedAt { get; set; }
+    public DateTime ModifiedAt { get; set; }
 
 }

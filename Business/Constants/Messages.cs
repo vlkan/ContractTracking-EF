@@ -16,10 +16,10 @@ public static class Messages
     public static string CustomerListed = "Customers Listed";
     public static string CustomerAlreadyExist = "Customer is Already Exist";
     public static string AuthorizationDenied = "Auth Issue";
-    internal static string UserRegistered;
-    internal static User UserNotFound;
-    internal static User PasswordError;
-    internal static string SuccessfulLogin;
-    internal static string UserAlreadyExists;
-    internal static string AccessTokenCreated;
+    internal static string UserRegistered = "User Registered";
+    internal static string UserNotFound = "User Not Found";
+    internal static string PasswordError = "Your password is incorrect";
+    internal static string SuccessfulLogin = "Correct Email and Password";
+    internal static string UserAlreadyExists = "This user already exist";
+    internal static string AccessTokenCreated = "Access Token Created";
 }
