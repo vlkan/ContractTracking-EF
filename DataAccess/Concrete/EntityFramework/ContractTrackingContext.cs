@@ -1,4 +1,5 @@
-﻿using Entities.Concrete;
+﻿using Core.Entities.Concrete;
+using Entities.Concrete;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.Extensions.Configuration;
 using System;
@@ -18,6 +19,9 @@ public class ContractTrackingContext : DbContext
     public DbSet<Project> Projects { get; set; }
     public DbSet<WorkList> WorkLists { get; set; }
     public DbSet<Notification> Notifications { get; set; }
+    public DbSet<OperationClaim> OperationClaims { get; set; }
+    public DbSet<User> Users { get; set; }
+    public DbSet<UserOperationClaim> UserOperationClaims { get; set; }
 
     protected override void OnConfiguring(DbContextOptionsBuilder optionsBuilder)
     {
