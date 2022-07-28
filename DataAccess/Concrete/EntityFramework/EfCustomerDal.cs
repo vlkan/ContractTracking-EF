@@ -20,7 +20,7 @@ public class EfCustomerDal : EfEntityRepositoryBase<Customer, ContractTrackingCo
         {
             var result = from c in context.Customers
                          join p in context.Projects
-                         on c.Id equals p.OwnerId
+                         on c.Id equals p.CustomerOwnerId
                          select new CustomerDetailDto 
                          { 
                              Id = c.Id, Email = c.Email, Phone = c.Phone, CreateAt = c.CreatedAt,

@@ -12,10 +12,10 @@ namespace Entities.Concrete;
 public class WorkList : IEntity
 {
     public int Id { get; set; }
-    public string EmployeeName { get; set; }
-    public string EmployeeSurname { get; set; }
+    public string Name { get; set; }
+    public string Surname { get; set; }
     public string ProjectName { get; set; }
-    public int NumberOfDaysWorked { get; set; }
+    public int WorkingHours { get; set; }
     public DateTime? WorkingDate { get; set; }
     public int IsDeleted { get; set; }
     public DateTime CreatedAt { get; set; }

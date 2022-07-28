@@ -13,8 +13,8 @@ namespace Entities.Concrete;
 public class Payment : IEntity
 {
     public int Id { get; set; }
-    public string EmployeeName { get; set; }
-    public string EmployeeSurname { get; set; }
+    public string Name { get; set; }
+    public string Surname { get; set; }
     public string ProjectName { get; set; }
     [Column(TypeName = "money")]
     public Decimal FeePaid { get; set; }

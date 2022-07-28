@@ -42,7 +42,7 @@ public class CustomerManager : ICustomerService
         return new SuccessResult(Messages.CustomerAdded);
     }
 
-    [SecuredOperation("customer.add, admin")]
+    //[SecuredOperation("customer.add, admin")]
     public IDataResult<List<Customer>> GetAll()
     {
         return new SuccessDataResult<List<Customer>>(_customerDal.GetAll(), Messages.CustomerListed);
