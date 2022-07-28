@@ -4,7 +4,7 @@ public class OperationClaim : IEntity
 {
     public int Id { get; set; }
     public string Name { get; set; }
-    public DateTime CreatedAt { get => throw new NotImplementedException(); set => throw new NotImplementedException(); }
-    public DateTime? ModifiedAt { get => throw new NotImplementedException(); set => throw new NotImplementedException(); }
-    public int IsDeleted { get => throw new NotImplementedException(); set => throw new NotImplementedException(); }
+    public DateTime CreatedAt { get; set; }
+    public DateTime? ModifiedAt { get; set; }
+    public int IsDeleted { get; set; }
 }

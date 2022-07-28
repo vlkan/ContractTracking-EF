@@ -8,9 +8,9 @@ namespace Core.Entities.Concrete;
 
 public class User : IEntity
 {
-    public DateTime CreatedAt { get => throw new NotImplementedException(); set => throw new NotImplementedException(); }
-    public DateTime? ModifiedAt { get => throw new NotImplementedException(); set => throw new NotImplementedException(); }
-    public int IsDeleted { get => throw new NotImplementedException(); set => throw new NotImplementedException(); }
+    public DateTime CreatedAt { get; set; }
+    public DateTime? ModifiedAt { get; set; }
+    public int IsDeleted { get; set; }
 
 
     public int Id { get; set; }
