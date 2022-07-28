@@ -1,4 +1,5 @@
 ﻿using Business.Abstract;
+using Business.BusinessAspects.Autofac;
 using Business.Constants;
 using Business.ValidationRules.FluentValidation;
 using Core.Aspects.Autofac.Validation;
@@ -28,6 +29,7 @@ public class CustomerManager : ICustomerService
         _projectService = projectService;
     }
 
+    [SecuredOperation("customer.add, admin")] //not necessary this project
     [ValidationAspect(typeof(CustomerValidator))]
     public IResult Add(Customer customer)
     {
