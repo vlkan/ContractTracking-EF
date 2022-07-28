@@ -14,12 +14,12 @@ public class Payment : IEntity
     public int Id { get; set; }
     public string Name { get; set; }
     public string Surname { get; set; }
-    public string ProjectName { get; set; }
+    public int ProjectId { get; set; }
     [Column(TypeName = "money")]
     public Decimal FeePaid { get; set; }
     [Column(TypeName = "money")]
     public Decimal RemainingBudget { get; set; }
-    public string PaymentDescription { get; set; }
+    public string Description { get; set; }
     public EnumIsDeleted IsDeleted { get; set; }
     public DateTime CreatedAt { get; set; }
     public DateTime ModifiedAt { get; set; }

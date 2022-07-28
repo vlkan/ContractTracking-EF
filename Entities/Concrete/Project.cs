@@ -19,7 +19,7 @@ public class Project : IEntity
     public string Description { get; set; }
     [Column(TypeName = "money")]
     public decimal? ContractBudget { get; set; }
-    public int? CurrencyType { get; set; }
+    public CurrencyTypeE? CurrencyType { get; set; }
     public int? ContractTerm { get; set; }
     public DateTime? ContractStartDate { get; set; }
     public int? WorkerDay { get; set; }
@@ -41,5 +41,6 @@ public enum CurrencyTypeE
 {
     TurkishLira = 1,
     Dollar = 2,
-    Pound = 3,
+    Euro = 3,
+    Pound = 4,
 }
