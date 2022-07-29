@@ -25,11 +25,11 @@ public class ContractTrackingContext : DbContext
 
     protected override void OnConfiguring(DbContextOptionsBuilder optionsBuilder)
     {
-        //IConfigurationRoot configuration = new ConfigurationBuilder()
-        //    .SetBasePath(AppDomain.CurrentDomain.BaseDirectory)
-        //    .AddJsonFile("appsettings.json")
-        //    .Build();
-        optionsBuilder.UseSqlServer(@"Server=(localdb)\MSSQLLocalDB;Database=ContractTracking;Trusted_Connection=true");
-        //optionsBuilder.UseSqlServer(configuration.GetConnectionString("SqlCon"));
+        IConfigurationRoot configuration = new ConfigurationBuilder()
+            .SetBasePath(AppDomain.CurrentDomain.BaseDirectory)
+            .AddJsonFile("appsettings.json")
+            .Build();
+        //optionsBuilder.UseSqlServer(@"Server=(localdb)\MSSQLLocalDB;Database=ContractTracking;Trusted_Connection=true");
+        optionsBuilder.UseSqlServer(configuration.GetConnectionString("SqlCon"));
     }
 }

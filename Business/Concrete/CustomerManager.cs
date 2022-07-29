@@ -48,7 +48,8 @@ public class CustomerManager : ICustomerService
         return new SuccessResult(Messages.CustomerDeleted);
     }
 
-    [SecuredOperation("admin")]
+    //[SecuredOperation("admin,user")]
+    [ValidationAspect(typeof(CustomerValidator))]
     public IDataResult<List<Customer>> GetAll()
     {
         return new SuccessDataResult<List<Customer>>(_customerDal.GetAll(), Messages.CustomerListed);
