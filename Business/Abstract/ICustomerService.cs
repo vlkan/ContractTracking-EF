@@ -16,6 +16,8 @@ public interface ICustomerService
     IDataResult<Customer> GetAllByEmail(string email);
     IDataResult<List<CustomerDetailDto>> GetCustomerDetails();
     IDataResult<Customer> GetById(int id);
+    IDataResult<Customer> GetByType(CustomerType type);
     IResult Add(Customer customer);
     IResult Update(Customer customer);
+    IResult Delete(Customer customer);
 }

@@ -16,7 +16,7 @@ public class WorkList : IEntity
     public int ProjectId { get; set; }
     public int WorkingHours { get; set; }
     public DateTime? WorkingDate { get; set; }
-    public EnumIsDeleted IsDeleted { get; set; }
-    public DateTime CreatedAt { get; set; }
-    public DateTime ModifiedAt { get; set; }
+    public EnumIsDeleted? IsDeleted { get; set; }
+    public DateTime? CreatedAt { get; set; }
+    public DateTime? ModifiedAt { get; set; }
 }

@@ -10,12 +10,14 @@ namespace Core.Extensions;
 
 public static class ServiceCollectionExtensions
 {
-    public static IServiceCollection AddDependencyResolvers(this IServiceCollection serviceCollections, ICoreModule[] modules) 
+    public static IServiceCollection AddDependencyResolvers
+        (this IServiceCollection serviceCollection, ICoreModule[] modules)
     {
         foreach (var module in modules)
         {
-            module.Load(serviceCollections);
+            module.Load(serviceCollection);
         }
-        return ServiceTool.Create(serviceCollections);
+
+        return ServiceTool.Create(serviceCollection);
     }
 }

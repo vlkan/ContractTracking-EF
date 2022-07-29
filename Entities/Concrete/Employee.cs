@@ -15,7 +15,7 @@ public class Employee : IEntity
     public string Email { get; set; }
     public string JobTitle { get; set; }
     public DateTime? StartDate { get; set; }
-    public EnumIsDeleted IsDeleted { get; set; }
-    public DateTime CreatedAt { get; set; }
-    public DateTime ModifiedAt { get; set; }
+    public EnumIsDeleted? IsDeleted { get; set; }
+    public DateTime? CreatedAt { get; set; }
+    public DateTime? ModifiedAt { get; set; }
 }

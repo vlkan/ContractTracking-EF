@@ -15,9 +15,9 @@ public class Customer : IEntity
     public string? Description { get; set; }
     public CustomerType Type { get; set; }
     public string? Phone { get; set; }
-    public EnumIsDeleted IsDeleted { get; set; }
-    public DateTime CreatedAt { get; set; }
-    public DateTime ModifiedAt { get; set; }
+    public EnumIsDeleted? IsDeleted { get; set; }
+    public DateTime? CreatedAt { get; set; }
+    public DateTime? ModifiedAt { get; set; }
 }
 
 public enum CustomerType : int

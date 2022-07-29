@@ -12,9 +12,9 @@ public class Notification : IEntity
     public int Id { get; set; }
     public NotificationType Type { get; set; }
     public string Message { get; set; }
-    public EnumIsDeleted IsDeleted { get; set; }
-    public DateTime CreatedAt { get; set; }
-    public DateTime ModifiedAt { get; set; }
+    public EnumIsDeleted? IsDeleted { get; set; }
+    public DateTime? CreatedAt { get; set; }
+    public DateTime? ModifiedAt { get; set; }
 }
 public enum NotificationType : int
 {

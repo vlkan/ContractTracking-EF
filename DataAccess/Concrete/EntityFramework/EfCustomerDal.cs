@@ -23,7 +23,7 @@ public class EfCustomerDal : EfEntityRepositoryBase<Customer, ContractTrackingCo
                          on c.Id equals p.CustomerOwnerId
                          select new CustomerDetailDto 
                          { 
-                             Id = c.Id, Email = c.Email, Phone = c.Phone, CreateAt = c.CreatedAt,
+                             Id = c.Id, Email = c.Email, Phone = c.Phone, CreateAt = (DateTime)c.CreatedAt,
                              ProjectName = p.Name, ProjectType = p.Type, ProjectDescription = p.Description,
                              ContractBudget = p.ContractBudget, ContractTerm = p.ContractTerm, ContractStartDate = p.ContractStartDate
                          };

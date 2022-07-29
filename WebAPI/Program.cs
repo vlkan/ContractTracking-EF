@@ -21,6 +21,9 @@ builder.Host.UseServiceProviderFactory(new AutofacServiceProviderFactory()).Conf
 // Add services to the container.
 
 
+builder.Services.AddControllers();
+//builder.Services.AddSingleton<ICustomerService, CustomerManager>();
+//builder.Services.AddSingleton<ICustomerDal, EfCustomerDal>();
 var tokenOptions = builder.Configuration.GetSection("TokenOptions").Get<TokenOptions>();
 
 builder.Services.AddAuthentication(JwtBearerDefaults.AuthenticationScheme)
@@ -37,11 +40,6 @@ builder.Services.AddAuthentication(JwtBearerDefaults.AuthenticationScheme)
             IssuerSigningKey = SecurityKeyHelper.CreateSecurityKey(tokenOptions.SecurityKey)
         };
     });
-
-
-builder.Services.AddControllers();
-//builder.Services.AddSingleton<ICustomerService, CustomerManager>();
-//builder.Services.AddSingleton<ICustomerDal, EfCustomerDal>();
 
 builder.Services.AddDependencyResolvers(new ICoreModule[]
 {

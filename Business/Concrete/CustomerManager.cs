@@ -29,7 +29,7 @@ public class CustomerManager : ICustomerService
         _projectService = projectService;
     }
 
-    //[SecuredOperation("customer.add, admin")] //not necessary this project
+    //[SecuredOperation("customer.add,admin")] //not necessary this project
     [ValidationAspect(typeof(CustomerValidator))]
     public IResult Add(Customer customer)
     {
@@ -42,7 +42,13 @@ public class CustomerManager : ICustomerService
         return new SuccessResult(Messages.CustomerAdded);
     }
 
-    //[SecuredOperation("customer.add, admin")]
+    public IResult Delete(Customer customer)
+    {
+        _customerDal.Delete(customer);
+        return new SuccessResult(Messages.CustomerDeleted);
+    }
+
+    [SecuredOperation("admin")]
     public IDataResult<List<Customer>> GetAll()
     {
         return new SuccessDataResult<List<Customer>>(_customerDal.GetAll(), Messages.CustomerListed);
@@ -61,6 +67,11 @@ public class CustomerManager : ICustomerService
     public IDataResult<Customer> GetById(int id)
     {
         return new SuccessDataResult<Customer>(_customerDal.Get(c => c.Id == id), Messages.CustomerListed);
+    }
+
+    public IDataResult<Customer> GetByType(CustomerType type)
+    {
+        return new SuccessDataResult<Customer>(_customerDal.Get(c => c.Type == type), Messages.CustomerListed);
     }
 
     public IDataResult<List<CustomerDetailDto>> GetCustomerDetails()
