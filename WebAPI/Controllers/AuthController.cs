@@ -1,6 +1,5 @@
 ﻿using Business.Abstract;
 using Entities.DTOs;
-using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
 
 namespace WebAPI.Controllers;
@@ -28,7 +27,7 @@ public class AuthController : Controller
         var result = _authService.CreateAccessToken(userToLogin.Data);
         if (result.Success)
         {
-            return Ok(result);
+            return Ok(result.Data);
         }
 
         return BadRequest(result.Message);
@@ -47,7 +46,7 @@ public class AuthController : Controller
         var result = _authService.CreateAccessToken(registerResult.Data);
         if (result.Success)
         {
-            return Ok(result);
+            return Ok(result.Data);
         }
 
         return BadRequest(result.Message);

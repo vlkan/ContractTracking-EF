@@ -15,10 +15,9 @@ public class ValidationAspect : MethodInterception
     private Type _validatorType;
     public ValidationAspect(Type validatorType)
     {
-        //Defensive Coding
         if (!typeof(IValidator).IsAssignableFrom(validatorType))
         {
-            throw new System.Exception("This is not a validator class");
+            throw new System.Exception("Bu bir doğrulama mesajıdır");
         }
 
         _validatorType = validatorType;
