@@ -25,4 +25,5 @@ public static class Messages
     internal static string ProjectAdded = "Project Added";
     internal static string ProjectDeleted = "Project Deleted";
     internal static string ProjectUpdated = "Project Updated";
+    internal static string ProjectListed = "Project Listed";
 }

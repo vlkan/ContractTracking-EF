@@ -33,7 +33,7 @@ public class ProjectManager : IProjectService
 
     public IDataResult<List<Project>> GetAll()
     {
-        return new SuccessDataResult<List<Project>>(_projectDal.GetAll());
+        return new SuccessDataResult<List<Project>>(_projectDal.GetAll(), Messages.ProjectListed);
     }
 
     public IDataResult<Project> GetById(int id)
