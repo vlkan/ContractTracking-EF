@@ -23,8 +23,20 @@ public class AutofacBusinessModule : Module
         builder.RegisterType<CustomerManager>().As<ICustomerService>().SingleInstance();
         builder.RegisterType<EfCustomerDal>().As<ICustomerDal>().SingleInstance();
 
+        builder.RegisterType<EmployeeManager>().As<IEmployeeService>().SingleInstance();
+        builder.RegisterType<EfEmployeeDal>().As<IEmployeeDal>().SingleInstance();
+
+        builder.RegisterType<NotificationManager>().As<INotificationService>().SingleInstance();
+        builder.RegisterType<EfNotificationDal>().As<INotificationDal>().SingleInstance();
+
+        builder.RegisterType<PaymentManager>().As<IPaymentService>().SingleInstance();
+        builder.RegisterType<EfPaymentDal>().As<IPaymentDal>().SingleInstance();
+
         builder.RegisterType<ProjectManager>().As<IProjectService>().SingleInstance();
         builder.RegisterType<EfProjectDal>().As<IProjectDal>().SingleInstance();
+
+        builder.RegisterType<WorkListManager>().As<IWorkListService>().SingleInstance();
+        builder.RegisterType<EfWorkListDal>().As<IWorkListDal>().SingleInstance();
 
         builder.RegisterType<UserManager>().As<IUserService>();
         builder.RegisterType<EfUserDal>().As<IUserDal>();
