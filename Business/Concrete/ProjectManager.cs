@@ -36,6 +36,10 @@ public class ProjectManager : IProjectService
         return new SuccessDataResult<List<Project>>(_projectDal.GetAll(), Messages.ProjectListed);
     }
 
+    public IDataResult<List<Project>> GetByCustomerId(int customerId)
+    {
+        return new SuccessDataResult<List<Project>>(_projectDal.GetAll(p => p.CustomerOwnerId == customerId), Messages.CustomerListed);
+    }
     public IDataResult<Project> GetById(int id)
     {
         return new SuccessDataResult<Project>(_projectDal.Get(p => p.Id == id));
