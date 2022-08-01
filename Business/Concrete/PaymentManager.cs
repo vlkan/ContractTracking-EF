@@ -1,4 +1,6 @@
 ﻿using Business.Abstract;
+using Business.Constants;
+using Core.Utilities.Results;
 using DataAccess.Abstract;
 using Entities.Concrete;
 using System;
@@ -11,15 +13,33 @@ namespace Business.Concrete;
 
 public class PaymentManager : IPaymentService
 {
-    IPaymentDal paymentDal;
+    IPaymentDal _paymentDal;
 
     public PaymentManager(IPaymentDal paymentDal)
     {
-        this.paymentDal = paymentDal;
+        this._paymentDal = paymentDal;
     }
 
-    public List<Payment> GetAll()
+    public IResult Add(Payment payment)
     {
-        return paymentDal.GetAll();
+        _paymentDal.Add(payment);
+        return new SuccessResult(Messages.PaymentAdded);
+    }
+
+    public IResult Delete(Payment payment)
+    {
+        _paymentDal.Delete(payment);
+        return new SuccessResult(Messages.PaymentDeleted);
+    }
+
+    public IDataResult<List<Payment>> GetAll()
+    {
+        return new SuccessDataResult<List<Payment>>(_paymentDal.GetAll(), Messages.PaymentListed);
+    }
+
+    public IResult Update(Payment payment)
+    {
+        _paymentDal.Update(payment);
+        return new SuccessResult(Messages.PaymentUpdated);
     }
 }

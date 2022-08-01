@@ -1,6 +1,7 @@
 ﻿using Business.Concrete;
 using DataAccess.Concrete.EntityFramework;
 
+Console.WriteLine("Terminal Test");
 //CustomerTest();
 
 //PaymentTest();
@@ -15,12 +16,12 @@ using DataAccess.Concrete.EntityFramework;
 //    }
 //}
 
-static void PaymentTest()
-{
-    PaymentManager paymentManager = new PaymentManager(new EfPaymentDal());
+//static void PaymentTest()
+//{
+//    PaymentManager paymentManager = new PaymentManager(new EfPaymentDal());
 
-    foreach (var payment in paymentManager.GetAll())
-    {
-        Console.WriteLine(payment.FeePaid);
-    }
-}
+//    foreach (var payment in paymentManager.GetAll())
+//    {
+//        Console.WriteLine(payment.FeePaid);
+//    }
+//}

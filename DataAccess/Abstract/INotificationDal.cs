@@ -8,6 +8,6 @@ using System.Threading.Tasks;
 
 namespace DataAccess.Abstract;
 
-public interface INotificationsDal : IEntityRepository<Notification>
+public interface INotificationDal : IEntityRepository<Notification>
 {
 }
