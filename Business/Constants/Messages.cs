@@ -22,4 +22,7 @@ public static class Messages
     internal static string SuccessfulLogin = "Correct Email and Password";
     internal static string UserAlreadyExists = "This user already exist";
     internal static string AccessTokenCreated = "Access Token Created";
+    internal static string ProjectAdded = "Project Added";
+    internal static string ProjectDeleted = "Project Deleted";
+    internal static string ProjectUpdated = "Project Updated";
 }
