@@ -1,5 +1,6 @@
 ﻿using Core.Utilities.Results;
 using Entities.Concrete;
+using Entities.DTOs;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -16,4 +17,6 @@ public interface IProjectService
     IResult Update(Project project);
     IResult Delete(Project project);
     IDataResult<List<Project>> GetByCustomerId(int customerId);
+
+    IDataResult<List<ProjectDetailDto>> GetProjectDetails();
 }

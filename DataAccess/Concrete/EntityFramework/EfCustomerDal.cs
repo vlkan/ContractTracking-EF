@@ -24,7 +24,7 @@ public class EfCustomerDal : EfEntityRepositoryBase<Customer, ContractTrackingCo
                          select new CustomerDetailDto 
                          { 
                              Id = c.Id, Email = c.Email, Phone = c.Phone, CreateAt = (DateTime)c.CreatedAt,
-                             ProjectName = p.Name, ProjectType = p.Type, ProjectDescription = p.Description,
+                             ProjectName = p.Name, ProjectType = (Entities.DTOs.ProjectType)p.Type, ProjectDescription = p.Description,
                              ContractBudget = p.ContractBudget, ContractTerm = p.ContractTerm, ContractStartDate = p.ContractStartDate
                          };
             return result.ToList();

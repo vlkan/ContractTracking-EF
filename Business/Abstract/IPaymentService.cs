@@ -14,4 +14,6 @@ public interface IPaymentService
     IResult Add(Payment payment);
     IResult Update(Payment payment);
     IResult Delete(Payment payment);
+
+    IDataResult<List<Payment>> GetByEmployeeId(int employeeId);
 }

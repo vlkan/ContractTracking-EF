@@ -27,6 +27,17 @@ namespace WebAPI.Controllers
             return BadRequest(result);
         }
 
+        [HttpGet("getbyemployee")]
+        public IActionResult GetByCustomer(int employeeId)
+        {
+            var result = _paymentService.GetByEmployeeId(employeeId);
+            if (result.Success)
+            {
+                return Ok(result);
+            }
+            return BadRequest(result);
+        }
+
         [HttpPost("add")]
         public IActionResult Add(Payment payment)
         {

@@ -37,6 +37,11 @@ public class PaymentManager : IPaymentService
         return new SuccessDataResult<List<Payment>>(_paymentDal.GetAll(), Messages.PaymentListed);
     }
 
+    public IDataResult<List<Payment>> GetByEmployeeId(int employeeId)
+    {
+        return new SuccessDataResult<List<Payment>>(_paymentDal.GetAll(p => p.EmployeeId == employeeId), Messages.PaymentListed);
+    }
+
     public IResult Update(Payment payment)
     {
         _paymentDal.Update(payment);

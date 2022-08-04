@@ -3,6 +3,7 @@ using Business.Constants;
 using Core.Utilities.Results;
 using DataAccess.Abstract;
 using Entities.Concrete;
+using Entities.DTOs;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -43,6 +44,11 @@ public class ProjectManager : IProjectService
     public IDataResult<Project> GetById(int id)
     {
         return new SuccessDataResult<Project>(_projectDal.Get(p => p.Id == id));
+    }
+
+    public IDataResult<List<ProjectDetailDto>> GetProjectDetails()
+    {
+        return new SuccessDataResult<List<ProjectDetailDto>>(_projectDal.GetProjectDetails(), Messages.ProjectListed);
     }
 
     public IResult Update(Project project)
