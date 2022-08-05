@@ -37,11 +37,6 @@ public class InvoicingManager : IInvoicingService
         return new SuccessDataResult<List<Invoice>>(_invoicingDal.GetAll(), Messages.PaymentListed);
     }
 
-    public IDataResult<List<Invoice>> GetByEmployeeId(int employeeId)
-    {
-        return new SuccessDataResult<List<Invoice>>(_invoicingDal.GetAll(p => p.EmployeeId == employeeId), Messages.PaymentListed);
-    }
-
     public IDataResult<List<Invoice>> GetByProjectId(int projectId)
     {
         return new SuccessDataResult<List<Invoice>>(_invoicingDal.GetAll(p => p.ProjectId == projectId), Messages.PaymentListed);

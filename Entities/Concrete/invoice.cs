@@ -15,11 +15,7 @@ public class Invoice : IEntity
     public string Name { get; set; }
     public string Surname { get; set; }
     public int ProjectId { get; set; }
-    public int EmployeeId { get; set; }
-    [Column(TypeName = "money")]
     public Decimal FeePaid { get; set; }
-    [Column(TypeName = "money")]
-    public Decimal RemainingBudget { get; set; }
     public string Description { get; set; }
     public EnumIsDeleted? IsDeleted { get; set; }
     public DateTime? CreatedAt { get; set; }

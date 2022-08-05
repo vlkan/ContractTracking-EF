@@ -28,25 +28,25 @@ public static class Messages
     public static string ProjectAdded = "Project Added";
     public static string ProjectDeleted = "Project Deleted";
     public static string ProjectUpdated = "Project Updated";
-    public static string ProjectListed = "Project Listed";
+    public static string ProjectListed = "Projects Listed";
 
     public static string EmployeeAdded = "Employee Added";
     public static string EmployeeDeleted = "Employee Deleted";
     public static string EmployeeUpdated = "Employee Updated";
-    public static string EmployeeListed = "Employee Listed";
+    public static string EmployeeListed = "Employees Listed";
 
     public static string NotificationAdded = "Notification Added";
     public static string NotificationUpdated = "Notification Updated";
     public static string NotificationDeleted = "Notification Deleted";
-    public static string NotificationListed = "Notification Listed";
+    public static string NotificationListed = "Notifications Listed";
 
-    public static string PaymentAdded = "Payment Added";
-    public static string PaymentDeleted = "Payment Deleted";
-    public static string PaymentUpdated = "Payment Updated";
-    public static string PaymentListed = "Payment Listed";
+    public static string PaymentAdded = "Invoice Added";
+    public static string PaymentDeleted = "Invoice Deleted";
+    public static string PaymentUpdated = "Invoice Updated";
+    public static string PaymentListed = "Invoices Listed";
 
     public static string WorkListAdded = "Worklist Added";
     public static string WorkListUpdated = "WorkList Updated";
     public static string WorkListDeleted = "WorkList Deleted";
-    public static string WorkListListed = "WorkList Listed";
+    public static string WorkListListed = "WorkLists Listed";
 }
