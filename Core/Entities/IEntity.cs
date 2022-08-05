@@ -14,8 +14,4 @@ public interface IEntity
     public EnumIsDeleted? IsDeleted { get; set; }
 }
 
-public enum EnumIsDeleted : int
-{
-    No = 0,
-    Yes = 1,
-}
+public enum EnumIsDeleted { }
