@@ -15,6 +15,7 @@ namespace Business.Concrete;
 public class ProjectManager : IProjectService
 {
     IProjectDal _projectDal;
+    //IServiceRepository<Project> _projectDal;
     public ProjectManager(IProjectDal projectDal)
     {
         _projectDal = projectDal;
