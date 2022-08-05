@@ -7,19 +7,19 @@ namespace WebAPI.Controllers
 {
     [Route("api/[controller]")]
     [ApiController]
-    public class PaymentsController : ControllerBase
+    public class InvoicingController : ControllerBase
     {
-        IPaymentService _paymentService;
+        IInvoicingService _invoicingService;
 
-        public PaymentsController(IPaymentService paymentService)
+        public InvoicingController(IInvoicingService invoicingService)
         {
-            _paymentService = paymentService;
+            _invoicingService = invoicingService;
         }
 
         [HttpGet("getall")]
         public IActionResult GetAll()
         {
-            var result = _paymentService.GetAll();
+            var result = _invoicingService.GetAll();
             if (result.Success)
             {
                 return Ok(result);
@@ -30,7 +30,7 @@ namespace WebAPI.Controllers
         [HttpGet("getbyemployee")]
         public IActionResult GetByCustomer(int employeeId)
         {
-            var result = _paymentService.GetByEmployeeId(employeeId);
+            var result = _invoicingService.GetByProjectId(employeeId);
             if (result.Success)
             {
                 return Ok(result);
@@ -39,9 +39,9 @@ namespace WebAPI.Controllers
         }
 
         [HttpPost("add")]
-        public IActionResult Add(Payment payment)
+        public IActionResult Add(Invoicing invoice)
         {
-            var result = _paymentService.Add(payment);
+            var result = _invoicingService.Add(invoice);
             if (result.Success)
             {
                 return Ok(result);
@@ -50,9 +50,9 @@ namespace WebAPI.Controllers
         }
 
         [HttpPost("update")]
-        public IActionResult Update(Payment payment)
+        public IActionResult Update(Invoicing invoice)
         {
-            var result = _paymentService.Update(payment);
+            var result = _invoicingService.Update(invoice);
             if (result.Success)
             {
                 return Ok(result);
@@ -61,9 +61,9 @@ namespace WebAPI.Controllers
         }
 
         [HttpPost("delete")]
-        public IActionResult Delete(Payment payment)
+        public IActionResult Delete(Invoicing invoice)
         {
-            var result = _paymentService.Delete(payment);
+            var result = _invoicingService.Delete(invoice);
             if (result.Success)
             {
                 return Ok(result);

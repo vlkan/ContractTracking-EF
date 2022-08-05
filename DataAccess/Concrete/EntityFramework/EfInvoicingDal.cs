@@ -10,6 +10,6 @@ using System.Threading.Tasks;
 
 namespace DataAccess.Concrete.EntityFramework;
 
-public class EfPaymentDal : EfEntityRepositoryBase<Payment, ContractTrackingContext>, IPaymentDal
+public class EfInvoicingDal : EfEntityRepositoryBase<Invoicing, ContractTrackingContext>, IInvoicingDal
 {
 }
