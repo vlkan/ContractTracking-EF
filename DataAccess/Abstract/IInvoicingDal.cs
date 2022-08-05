@@ -8,6 +8,6 @@ using System.Threading.Tasks;
 
 namespace DataAccess.Abstract;
 
-public interface IInvoicingDal : IEntityRepository<Invoicing>
+public interface IInvoicingDal : IEntityRepository<Invoice>
 {
 }

@@ -15,7 +15,7 @@ public class ContractTrackingContext : DbContext
 {
     public DbSet<Customer> Customers { get; set; }
     public DbSet<Employee> Employees { get; set; }
-    public DbSet<Invoicing> Invoicings { get; set; }
+    public DbSet<Invoice> Invoicings { get; set; }
     public DbSet<Project> Projects { get; set; }
     public DbSet<WorkList> WorkLists { get; set; }
     public DbSet<Notification> Notifications { get; set; }

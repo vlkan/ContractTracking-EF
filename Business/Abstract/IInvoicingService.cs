@@ -10,10 +10,10 @@ namespace Business.Abstract;
 
 public interface IInvoicingService
 {
-    IDataResult<List<Invoicing>> GetAll();
-    IResult Add(Invoicing payment);
-    IResult Update(Invoicing payment);
-    IResult Delete(Invoicing payment);
+    IDataResult<List<Invoice>> GetAll();
+    IResult Add(Invoice payment);
+    IResult Update(Invoice payment);
+    IResult Delete(Invoice payment);
 
-    IDataResult<List<Invoicing>> GetByProjectId(int projectId);
+    IDataResult<List<Invoice>> GetByProjectId(int projectId);
 }

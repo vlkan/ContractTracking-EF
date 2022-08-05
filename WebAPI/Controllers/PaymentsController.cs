@@ -39,7 +39,7 @@ namespace WebAPI.Controllers
         }
 
         [HttpPost("add")]
-        public IActionResult Add(Invoicing invoice)
+        public IActionResult Add(Invoice invoice)
         {
             var result = _invoicingService.Add(invoice);
             if (result.Success)
@@ -50,7 +50,7 @@ namespace WebAPI.Controllers
         }
 
         [HttpPost("update")]
-        public IActionResult Update(Invoicing invoice)
+        public IActionResult Update(Invoice invoice)
         {
             var result = _invoicingService.Update(invoice);
             if (result.Success)
@@ -61,7 +61,7 @@ namespace WebAPI.Controllers
         }
 
         [HttpPost("delete")]
-        public IActionResult Delete(Invoicing invoice)
+        public IActionResult Delete(Invoice invoice)
         {
             var result = _invoicingService.Delete(invoice);
             if (result.Success)
