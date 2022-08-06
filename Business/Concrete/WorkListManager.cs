@@ -3,6 +3,7 @@ using Business.Constants;
 using Core.Utilities.Results;
 using DataAccess.Abstract;
 using Entities.Concrete;
+using Entities.DTOs;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -35,6 +36,11 @@ public class WorkListManager : IWorkListService
     public IDataResult<List<WorkList>> GetAll()
     {
         return new SuccessDataResult<List<WorkList>>(_workListDal.GetAll(), Messages.WorkListListed);
+    }
+
+    public IDataResult<List<WorkListDetailDto>> GetWorkListDetails()
+    {
+        return new SuccessDataResult<List<WorkListDetailDto>>(_workListDal.GetWorkListDetails(), Messages.WorkListListed);
     }
 
     public IResult Update(WorkList workList)

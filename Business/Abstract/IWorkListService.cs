@@ -1,5 +1,6 @@
 ﻿using Core.Utilities.Results;
 using Entities.Concrete;
+using Entities.DTOs;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -14,4 +15,6 @@ public interface IWorkListService
     IResult Add(WorkList workList);
     IResult Update(WorkList workList);
     IResult Delete(WorkList workList);
+
+    IDataResult<List<WorkListDetailDto>> GetWorkListDetails();
 }
