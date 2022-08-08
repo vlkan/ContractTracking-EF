@@ -52,6 +52,11 @@ public class ProjectManager : IProjectService
         return new SuccessDataResult<List<ProjectDetailDto>>(_projectDal.GetProjectDetails(), Messages.ProjectListed);
     }
 
+    public IDataResult<List<ProjectDetailDto>> GetProjectDetailsByCustomerId(int customerId)
+    {
+        return new SuccessDataResult<List<ProjectDetailDto>>(_projectDal.GetProjectDetailsByCustomerId(customerId), Messages.ProjectListed);
+    }
+
     public IResult Update(Project project)
     {
         _projectDal.Update(project);

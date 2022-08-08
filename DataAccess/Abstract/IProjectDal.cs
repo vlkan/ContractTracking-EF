@@ -12,4 +12,5 @@ namespace DataAccess.Abstract;
 public interface IProjectDal : IEntityRepository<Project>
 {
     List<ProjectDetailDto> GetProjectDetails();
+    List<ProjectDetailDto> GetProjectDetailsByCustomerId(int customerId);
 }
