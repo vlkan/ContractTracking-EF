@@ -3,6 +3,7 @@ using Business.Constants;
 using Core.Utilities.Results;
 using DataAccess.Abstract;
 using Entities.Concrete;
+using Entities.DTOs;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -40,6 +41,11 @@ public class InvoicingManager : IInvoicingService
     public IDataResult<List<Invoice>> GetByProjectId(int projectId)
     {
         return new SuccessDataResult<List<Invoice>>(_invoicingDal.GetAll(p => p.ProjectId == projectId), Messages.PaymentListed);
+    }
+
+    public IDataResult<List<InvoiceDetailDto>> GetInvoiceDetails()
+    {
+        return new SuccessDataResult<List<InvoiceDetailDto>>(_invoicingDal.GetInvoiceDetails(), Messages.PaymentListed);
     }
 
     public IResult Update(Invoice invoice)
