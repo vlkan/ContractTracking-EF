@@ -25,7 +25,7 @@ public class ProjectDetailDto : IDto
     public int? WorkerDay { get; set; }
     public int? WorkerHour { get; set; }
     public int? RemainingContractBudget { get; set; }
-    public int? RemainingWorkerHour { get; set; }
+    public double? RemainingWorkerHour { get; set; }
     public EnumIsDeleted? IsDeleted { get; set; }
     public DateTime? CreatedAt { get; set; }
     public DateTime? ModifiedAt { get; set; }
