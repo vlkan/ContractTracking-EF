@@ -82,11 +82,11 @@ public class CustomerManager : ICustomerService
 
     public IResult Update(Customer customer)
     {
-        IResult result = BusinessRules.Run(CheckIfCustomerExists(customer.Name));
-        if (result != null) 
-        {
-            return result;
-        }
+        //IResult result = BusinessRules.Run(CheckIfCustomerExists(customer.Name));
+        //if (result != null) 
+        //{
+        //    return result;
+        //}
         _customerDal.Update(customer);
         return new SuccessResult(Messages.CustomerUpdated);
     }
