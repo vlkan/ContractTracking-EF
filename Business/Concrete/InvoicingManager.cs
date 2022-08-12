@@ -32,6 +32,11 @@ public class InvoicingManager : IInvoicingService
         _invoicingDal.Delete(invoice);
         return new SuccessResult(Messages.PaymentDeleted);
     }
+    public IResult SoftDelete(Invoice invoice)
+    {
+        _invoicingDal.SoftDelete(invoice);
+        return new SuccessResult(Messages.PaymentDeleted);
+    }
 
     public IDataResult<List<Invoice>> GetAll()
     {

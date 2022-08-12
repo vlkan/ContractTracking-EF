@@ -32,6 +32,12 @@ public class EmployeeManager : IEmployeeService
         return new SuccessResult(Messages.EmployeeDeleted);
     }
 
+    public IResult SoftDelete(Employee employee)
+    {
+        _employeeDal.SoftDelete(employee);
+        return new SuccessResult(Messages.EmployeeDeleted);
+    }
+
     public IDataResult<List<Employee>> GetAll()
     {
         return new SuccessDataResult<List<Employee>>(_employeeDal.GetAll(), Messages.EmployeeListed);

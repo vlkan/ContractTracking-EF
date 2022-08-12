@@ -15,6 +15,7 @@ public interface IWorkListService
     IResult Add(WorkList workList);
     IResult Update(WorkList workList);
     IResult Delete(WorkList workList);
+    IResult SoftDelete(WorkList workList);
 
     IDataResult<List<WorkListDetailDto>> GetWorkListDetails();
 }

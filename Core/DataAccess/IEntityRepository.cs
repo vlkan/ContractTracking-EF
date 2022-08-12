@@ -16,5 +16,6 @@ public interface IEntityRepository<T> where T : class, IEntity, new()
     T Get(Expression<Func<T, bool>> filter);
     void Add(T entity);
     void Delete(T entity);
+    void SoftDelete(T entity);
     void Update(T entity);
 }

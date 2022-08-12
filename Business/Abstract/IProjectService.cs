@@ -16,6 +16,7 @@ public interface IProjectService
     IResult Add(Project project);
     IResult Update(Project project);
     IResult Delete(Project project);
+    IResult SoftDelete(Project project);
 
     IDataResult<List<Project>> GetByCustomerId(int customerId);
     IDataResult<List<ProjectDetailDto>> GetProjectDetails();

@@ -13,4 +13,5 @@ public interface IServiceRepository<T>
     IResult Add(T entity);
     IResult Update(T entity);
     IResult Delete(T entity);
+    IResult SoftDelete(T entity);
 }

@@ -33,6 +33,12 @@ public class WorkListManager : IWorkListService
         return new SuccessResult(Messages.WorkListDeleted);
     }
 
+    public IResult SoftDelete(WorkList workList)
+    {
+        _workListDal.SoftDelete(workList);
+        return new SuccessResult(Messages.WorkListDeleted);
+    }
+
     public IDataResult<List<WorkList>> GetAll()
     {
         return new SuccessDataResult<List<WorkList>>(_workListDal.GetAll(), Messages.WorkListListed);

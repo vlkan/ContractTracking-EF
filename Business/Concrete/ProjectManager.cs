@@ -33,6 +33,12 @@ public class ProjectManager : IProjectService
         return new SuccessResult(Messages.ProjectDeleted);
     }
 
+    public IResult SoftDelete(Project project)
+    {
+        _projectDal.SoftDelete(project);
+        return new SuccessResult(Messages.ProjectDeleted);
+    }
+
     public IDataResult<List<Project>> GetAll()
     {
         return new SuccessDataResult<List<Project>>(_projectDal.GetAll(), Messages.ProjectListed);

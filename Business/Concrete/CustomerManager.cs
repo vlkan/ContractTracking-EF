@@ -48,6 +48,12 @@ public class CustomerManager : ICustomerService
         return new SuccessResult(Messages.CustomerDeleted);
     }
 
+    public IResult SoftDelete(Customer customer)
+    {
+        _customerDal.SoftDelete(customer);
+        return new SuccessResult(Messages.CustomerDeleted);
+    }
+
     //[SecuredOperation("admin,user")]
     [ValidationAspect(typeof(CustomerValidator))]
     public IDataResult<List<Customer>> GetAll()

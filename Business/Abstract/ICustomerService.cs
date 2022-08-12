@@ -20,4 +20,5 @@ public interface ICustomerService
     IResult Add(Customer customer);
     IResult Update(Customer customer);
     IResult Delete(Customer customer);
+    IResult SoftDelete(Customer customer);
 }
