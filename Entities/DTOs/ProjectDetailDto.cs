@@ -17,6 +17,7 @@ public class ProjectDetailDto : IDto
     public string EmployeeOwnerSurName { get; set; }
     public string CustomerOwnerName { get; set; }
     public int CustomerId { get; set; }
+    public int EmployeeId { get; set; }
     public string Description { get; set; }
     public int? ContractBudget { get; set; }
     public CurrencyTypeE? CurrencyType { get; set; }

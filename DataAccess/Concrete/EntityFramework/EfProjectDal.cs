@@ -23,7 +23,7 @@ public class EfProjectDal : EfEntityRepositoryBase<Project, ContractTrackingCont
                          select new ProjectDetailDto
                          {
                              Id = p.Id, Name = p.Name, Type = (Entities.DTOs.ProjectType)p.Type, SubType = p.SubType,
-                             EmployeeOwnerName = e.Name, EmployeeOwnerSurName = e.Surname, CustomerOwnerName = c.Name, CustomerId = c.Id,
+                             EmployeeOwnerName = e.Name, EmployeeOwnerSurName = e.Surname, CustomerOwnerName = c.Name, CustomerId = c.Id, EmployeeId = e.Id,
                              Description = p.Description, ContractBudget = p.ContractBudget, CurrencyType = (Entities.DTOs.CurrencyTypeE)p.CurrencyType,
                              ContractTerm = p.ContractTerm, ContractStartDate = p.ContractStartDate, WorkerDay = p.WorkerDay, WorkerHour = p.WorkerHour,
                              RemainingContractBudget = p.RemainingContractBudget, RemainingWorkerHour = p.RemainingWorkerHour,
