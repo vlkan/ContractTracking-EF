@@ -51,7 +51,7 @@ public class EfInvoicingDal : EfEntityRepositoryBase<Invoice, ContractTrackingCo
                              CreatedAt = i.CreatedAt,
                              ModifiedAt = i.ModifiedAt,
                          };
-            return result.Where(i => i.TransactionDate > start && i.TransactionDate < end).ToList();
+            return result.Where(i => i.TransactionDate >= start && i.TransactionDate <= end).ToList();
         }
     }
 }
