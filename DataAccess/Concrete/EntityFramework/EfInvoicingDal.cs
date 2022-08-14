@@ -25,6 +25,7 @@ public class EfInvoicingDal : EfEntityRepositoryBase<Invoice, ContractTrackingCo
                              ProjectName = p.Name,
                              FeePaid = i.FeePaid,
                              Description = i.Description,
+                             TransactionDate = i.TransactionDate,
                              IsDeleted = i.IsDeleted,
                              CreatedAt = i.CreatedAt,
                              ModifiedAt = i.ModifiedAt,
@@ -45,11 +46,12 @@ public class EfInvoicingDal : EfEntityRepositoryBase<Invoice, ContractTrackingCo
                              ProjectName = p.Name,
                              FeePaid = i.FeePaid,
                              Description = i.Description,
+                             TransactionDate = i.TransactionDate,
                              IsDeleted = i.IsDeleted,
                              CreatedAt = i.CreatedAt,
                              ModifiedAt = i.ModifiedAt,
                          };
-            return result.Where(i => i.CreatedAt > start && i.CreatedAt < end).ToList();
+            return result.Where(i => i.TransactionDate > start && i.TransactionDate < end).ToList();
         }
     }
 }

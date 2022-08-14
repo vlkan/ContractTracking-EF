@@ -15,6 +15,7 @@ public class Invoice : IEntity
     public int ProjectId { get; set; }
     public Decimal FeePaid { get; set; }
     public string Description { get; set; }
+    public DateTime TransactionDate { get; set; }
     public EnumIsDeleted? IsDeleted { get; set; }
     public DateTime? CreatedAt { get; set; }
     public DateTime? ModifiedAt { get; set; }
