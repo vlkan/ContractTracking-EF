@@ -74,7 +74,7 @@ public class CustomersController : ControllerBase
         return BadRequest(result);
     }
 
-    [HttpGet("deletebyid")]
+    [HttpPost("deletebyid")]
     public IActionResult DeleteById(int id)
     {
         var result = _customerService.SoftDelete(id);

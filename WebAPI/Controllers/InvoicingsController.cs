@@ -82,7 +82,7 @@ namespace WebAPI.Controllers
             return BadRequest(result);
         }
 
-        [HttpGet("deletebyid")]
+        [HttpPost("deletebyid")]
         public IActionResult DeleteById(int id)
         {
             var result = _invoicingService.SoftDelete(id);
