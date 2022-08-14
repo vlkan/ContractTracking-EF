@@ -32,4 +32,24 @@ public class EfInvoicingDal : EfEntityRepositoryBase<Invoice, ContractTrackingCo
             return result.ToList();
         }
     }
+
+    public List<InvoiceDetailDto> SearchDateRange(DateTime start, DateTime end)
+    {
+        using (ContractTrackingContext context = new ContractTrackingContext())
+        {
+            var result = from i in context.Invoicings
+                         join p in context.Projects on i.ProjectId equals p.Id
+                         select new InvoiceDetailDto
+                         {
+                             Id = i.Id,
+                             ProjectName = p.Name,
+                             FeePaid = i.FeePaid,
+                             Description = i.Description,
+                             IsDeleted = i.IsDeleted,
+                             CreatedAt = i.CreatedAt,
+                             ModifiedAt = i.ModifiedAt,
+                         };
+            return result.Where(i => i.CreatedAt > start && i.CreatedAt < end).ToList();
+        }
+    }
 }

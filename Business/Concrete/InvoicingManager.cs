@@ -58,4 +58,9 @@ public class InvoicingManager : IInvoicingService
         _invoicingDal.Update(invoice);
         return new SuccessResult(Messages.PaymentUpdated);
     }
+
+    public IDataResult<List<InvoiceDetailDto>> SearchDateRange(DateTime start, DateTime end)
+    {
+        return new SuccessDataResult<List<InvoiceDetailDto>>(_invoicingDal.SearchDateRange(start, end), Messages.PaymentListed);
+    }
 }

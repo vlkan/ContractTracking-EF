@@ -38,6 +38,17 @@ namespace WebAPI.Controllers
             return BadRequest(result);
         }
 
+        [HttpGet("search")]
+        public IActionResult Search(DateTime start, DateTime end)
+        {
+            var result = _invoicingService.SearchDateRange(start, end);
+            if (result.Success)
+            {
+                return Ok(result);
+            }
+            return BadRequest(result);
+        }
+
         [HttpGet("getbyemployee")]
         public IActionResult GetByCustomer(int employeeId)
         {

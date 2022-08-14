@@ -19,4 +19,5 @@ public interface IInvoicingService
 
     IDataResult<List<Invoice>> GetByProjectId(int projectId);
     IDataResult<List<InvoiceDetailDto>> GetInvoiceDetails();
+    IDataResult<List<InvoiceDetailDto>> SearchDateRange(DateTime start, DateTime end);
 }

@@ -12,4 +12,5 @@ namespace DataAccess.Abstract;
 public interface IInvoicingDal : IEntityRepository<Invoice>
 {
     public List<InvoiceDetailDto> GetInvoiceDetails();
+    public List<InvoiceDetailDto> SearchDateRange(DateTime start, DateTime end);
 }
