@@ -32,9 +32,9 @@ public class NotificationManager : INotificationService
         return new SuccessResult(Messages.NotificationDeleted);
     }
 
-    public IResult SoftDelete(Notification notification)
+    public IResult SoftDelete(int id)
     {
-        _notificationDal.SoftDelete(notification);
+        _notificationDal.SoftDelete(id);
         return new SuccessResult(Messages.NotificationDeleted);
     }
 

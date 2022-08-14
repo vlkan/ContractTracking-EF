@@ -14,5 +14,5 @@ public interface IEmployeeService
     IResult Add(Employee employee);
     IResult Update(Employee employee);
     IResult Delete(Employee employee);
-    IResult SoftDelete(Employee employee);
+    IResult SoftDelete(int id);
 }

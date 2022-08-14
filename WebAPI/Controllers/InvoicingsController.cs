@@ -81,5 +81,16 @@ namespace WebAPI.Controllers
             }
             return BadRequest(result);
         }
+
+        [HttpGet("deletebyid")]
+        public IActionResult DeleteById(int id)
+        {
+            var result = _invoicingService.SoftDelete(id);
+            if (result.Success)
+            {
+                return Ok(result);
+            }
+            return BadRequest(result);
+        }
     }
 }

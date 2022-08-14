@@ -52,13 +52,16 @@ public class EfEntityRepositoryBase<TEntity, TContext> : IEntityRepository<TEnti
         }
     }
 
-    public void SoftDelete(TEntity entity)
+    public void SoftDelete(int id)
     {
+        var entity = new TEntity() { Id = id, IsDeleted = (EnumIsDeleted?)1 };
         using (TContext context = new TContext())
         {
-            entity.IsDeleted = (EnumIsDeleted?)1;
-            var updatedEntity = context.Entry(entity);
-            updatedEntity.State = EntityState.Modified;
+            context.Attach(entity);
+            context.Entry(entity).Property(e => e.IsDeleted).IsModified = true;
+            //entity.IsDeleted = (EnumIsDeleted?)1;
+            //var updatedEntity = context.Entry(entity);
+            //updatedEntity.State = EntityState.Modified;
             context.SaveChanges();
         }
     }

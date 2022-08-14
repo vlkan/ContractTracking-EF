@@ -32,9 +32,9 @@ public class EmployeeManager : IEmployeeService
         return new SuccessResult(Messages.EmployeeDeleted);
     }
 
-    public IResult SoftDelete(Employee employee)
+    public IResult SoftDelete(int id)
     {
-        _employeeDal.SoftDelete(employee);
+        _employeeDal.SoftDelete(id);
         return new SuccessResult(Messages.EmployeeDeleted);
     }
 

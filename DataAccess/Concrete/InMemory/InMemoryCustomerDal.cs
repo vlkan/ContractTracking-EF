@@ -62,7 +62,7 @@ namespace DataAccess.Concrete.InMemory
             throw new NotImplementedException();
         }
 
-        public void SoftDelete(Customer entity)
+        public void SoftDelete(int id)
         {
             throw new NotImplementedException();
         }

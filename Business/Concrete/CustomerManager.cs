@@ -48,9 +48,9 @@ public class CustomerManager : ICustomerService
         return new SuccessResult(Messages.CustomerDeleted);
     }
 
-    public IResult SoftDelete(Customer customer)
+    public IResult SoftDelete(int id)
     {
-        _customerDal.SoftDelete(customer);
+        _customerDal.SoftDelete(id);
         return new SuccessResult(Messages.CustomerDeleted);
     }
 

@@ -33,9 +33,9 @@ public class ProjectManager : IProjectService
         return new SuccessResult(Messages.ProjectDeleted);
     }
 
-    public IResult SoftDelete(Project project)
+    public IResult SoftDelete(int id)
     {
-        _projectDal.SoftDelete(project);
+        _projectDal.SoftDelete(id);
         return new SuccessResult(Messages.ProjectDeleted);
     }
 

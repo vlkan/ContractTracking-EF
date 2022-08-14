@@ -14,5 +14,5 @@ public interface INotificationService
     IResult Add(Notification notification);
     IResult Update(Notification notification);
     IResult Delete(Notification notification);
-    IResult SoftDelete(Notification notification);
+    IResult SoftDelete(int id);
 }

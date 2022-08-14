@@ -33,9 +33,9 @@ public class WorkListManager : IWorkListService
         return new SuccessResult(Messages.WorkListDeleted);
     }
 
-    public IResult SoftDelete(WorkList workList)
+    public IResult SoftDelete(int id)
     {
-        _workListDal.SoftDelete(workList);
+        _workListDal.SoftDelete(id);
         return new SuccessResult(Messages.WorkListDeleted);
     }
 
