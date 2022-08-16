@@ -61,6 +61,6 @@ public class InvoicingManager : IInvoicingService
 
     public IDataResult<List<InvoiceDetailDto>> SearchDateRange(DateTime start, DateTime end)
     {
-        return new SuccessDataResult<List<InvoiceDetailDto>>(_invoicingDal.SearchDateRange(start, end), Messages.PaymentListed);
+        return new SuccessDataResult<List<InvoiceDetailDto>>(_invoicingDal.GetInvoiceDetails().Where(i => i.TransactionDate >= start && i.TransactionDate <= end).ToList(), Messages.PaymentListed);
     }
 }
