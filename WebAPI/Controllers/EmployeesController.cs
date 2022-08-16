@@ -28,9 +28,9 @@ namespace WebAPI.Controllers
         }
 
         [HttpGet("search")]
-        public IActionResult Search(string text)
+        public IActionResult Search(string name)
         {
-            var result = _employeeService.GetAllByName(text);
+            var result = _employeeService.GetAllByName(name);
             if (result.Success)
             {
                 return Ok(result);

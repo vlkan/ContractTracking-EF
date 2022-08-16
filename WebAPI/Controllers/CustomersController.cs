@@ -42,9 +42,9 @@ public class CustomersController : ControllerBase
     }
 
     [HttpGet("search")]
-    public IActionResult Search(string text)
+    public IActionResult Search(string name)
     {
-        var result = _customerService.GetAllByName(text);
+        var result = _customerService.GetAllByName(name);
         if (result.Success)
         {
             return Ok(result);
