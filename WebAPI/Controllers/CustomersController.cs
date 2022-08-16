@@ -41,6 +41,17 @@ public class CustomersController : ControllerBase
         return BadRequest(result);
     }
 
+    [HttpGet("search")]
+    public IActionResult Search(string text)
+    {
+        var result = _customerService.GetAllByName(text);
+        if (result.Success)
+        {
+            return Ok(result);
+        }
+        return BadRequest(result);
+    }
+
     [HttpPost("add")]
     public IActionResult Add(Customer customer) 
     {

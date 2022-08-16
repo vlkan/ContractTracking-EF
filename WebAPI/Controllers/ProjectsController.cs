@@ -27,6 +27,17 @@ namespace WebAPI.Controllers
             return BadRequest(result);
         }
 
+        [HttpGet("search")]
+        public IActionResult Search(string text)
+        {
+            var result = _projectService.GetAllByCustomerAndProjectName(text);
+            if (result.Success)
+            {
+                return Ok(result);
+            }
+            return BadRequest(result);
+        }
+
         [HttpGet("getdetails")]
         public IActionResult GetDetails()
         {

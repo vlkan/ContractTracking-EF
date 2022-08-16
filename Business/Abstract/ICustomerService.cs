@@ -12,7 +12,7 @@ namespace Business.Abstract;
 public interface ICustomerService
 {
     IDataResult<List<Customer>> GetAll();
-    IDataResult<Customer> GetAllByName(string name);
+    IDataResult<List<Customer>> GetAllByName(string name);
     IDataResult<Customer> GetAllByEmail(string email);
     IDataResult<List<CustomerDetailDto>> GetCustomerDetails();
     IDataResult<Customer> GetById(int id);

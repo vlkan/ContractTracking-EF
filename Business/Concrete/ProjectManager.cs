@@ -2,6 +2,7 @@
 using Business.Constants;
 using Core.Utilities.Results;
 using DataAccess.Abstract;
+using DataAccess.Concrete.EntityFramework;
 using Entities.Concrete;
 using Entities.DTOs;
 using System;
@@ -9,6 +10,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using System.Xml.Linq;
 
 namespace Business.Concrete;
 
@@ -42,6 +44,12 @@ public class ProjectManager : IProjectService
     public IDataResult<List<Project>> GetAll()
     {
         return new SuccessDataResult<List<Project>>(_projectDal.GetAll(), Messages.ProjectListed);
+    }
+
+    public IDataResult<List<ProjectDetailDto>> GetAllByCustomerAndProjectName(string text)
+    {
+        return new SuccessDataResult<List<ProjectDetailDto>>(_projectDal.GetProjectDetails().Where(c => c.Name.ToLower().Contains(text.ToLower()) ||
+            c.CustomerOwnerName.ToLower().Contains(text.ToLower())).ToList(), Messages.ProjectListed);
     }
 
     public IDataResult<List<Project>> GetByCustomerId(int customerId)

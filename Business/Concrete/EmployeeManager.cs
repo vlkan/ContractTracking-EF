@@ -2,6 +2,7 @@
 using Business.Constants;
 using Core.Utilities.Results;
 using DataAccess.Abstract;
+using DataAccess.Concrete.EntityFramework;
 using Entities.Concrete;
 using System;
 using System.Collections.Generic;
@@ -18,6 +19,11 @@ public class EmployeeManager : IEmployeeService
     public EmployeeManager(IEmployeeDal employeeDal)
     {
         _employeeDal = employeeDal;
+    }
+
+    public IDataResult<List<Employee>> GetAllByName(string name)
+    {
+        return new SuccessDataResult<List<Employee>>(_employeeDal.GetAll().Where(e => e.Name.ToLower().Contains(name.ToLower())).ToList(), Messages.EmployeeListed);
     }
 
     public IResult Add(Employee employee)

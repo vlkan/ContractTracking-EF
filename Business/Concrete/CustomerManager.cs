@@ -66,9 +66,9 @@ public class CustomerManager : ICustomerService
         return new SuccessDataResult<Customer>(_customerDal.Get(c => c.Email == email), Messages.CustomerListed);
     }
 
-    public IDataResult<Customer> GetAllByName(string name)
+    public IDataResult<List<Customer>> GetAllByName(string name)
     {
-        return new SuccessDataResult<Customer>(_customerDal.Get(c => c.Name == name), Messages.CustomerListed);
+        return new SuccessDataResult<List<Customer>>(_customerDal.GetAll().Where(c => c.Name.ToLower().Contains(name.ToLower())).ToList(), Messages.CustomerListed);
     }
 
     public IDataResult<Customer> GetById(int id)

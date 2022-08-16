@@ -12,6 +12,7 @@ namespace Business.Abstract;
 public interface IProjectService
 {
     IDataResult<List<Project>> GetAll();
+    IDataResult<List<ProjectDetailDto>> GetAllByCustomerAndProjectName(string text);
     IDataResult<Project> GetById(int id);
     IResult Add(Project project);
     IResult Update(Project project);
